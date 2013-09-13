@@ -1,0 +1,303 @@
+/*****************************************************************************/
+/* Mixins
+/*****************************************************************************/
+/*****************************************************************************/
+/* Common
+/*****************************************************************************/
+/* Global Reset */
+/* line 15, ../scss/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, ../scss/main.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 23, ../scss/main.scss */
+body {
+  background-color: #fff;
+  font: 13.34px Helvetica, Arial, sans-serif;
+  font-size: small;
+  text-align: center;
+}
+
+/* line 35, ../scss/main.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Chunk';
+  line-height: 1;
+  margin: auto;
+}
+
+/* line 43, ../scss/main.scss */
+.subtitle {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+/* line 48, ../scss/main.scss */
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* line 50, ../scss/main.scss */
+a {
+  color: #00a;
+  text-decoration: none;
+}
+/* line 53, ../scss/main.scss */
+a:hover {
+  color: #000;
+}
+/* line 54, ../scss/main.scss */
+a:visited {
+  color: #a0a;
+}
+
+/* line 57, ../scss/main.scss */
+.hide {
+  display: none;
+}
+
+/* line 61, ../scss/main.scss */
+.highlight {
+  /*
+    @banderson623, sorry, i loved your yellow so i stole it.. :c)
+    Interested in seeing more of brian? http://bitbyteyum.com
+  */
+  background-color: #ffffed;
+  display: inline-block;
+  text-align: center;
+}
+
+/*****************************************************************************/
+/* Home
+/*****************************************************************************/
+/* line 74, ../scss/main.scss */
+.posts {
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+/* line 77, ../scss/main.scss */
+.posts li {
+  line-height: 1.75rem;
+}
+/* line 80, ../scss/main.scss */
+.posts span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/* line 87, ../scss/main.scss */
+#home {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+/*****************************************************************************/
+/* Site
+/*****************************************************************************/
+/* line 94, ../scss/main.scss */
+.site {
+  font-size: 115%;
+  text-align: justify;
+  width: 42rem;
+  margin: 3rem auto 2rem;
+  line-height: 1.5rem;
+}
+/* line 100, ../scss/main.scss */
+.site .meta {
+  color: #aaa;
+}
+
+/* line 102, ../scss/main.scss */
+.header {
+  text-align: center;
+}
+/* line 104, ../scss/main.scss */
+.header a {
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 108, ../scss/main.scss */
+.header .title {
+  font-size: 6rem;
+  display: block;
+}
+/* line 111, ../scss/main.scss */
+.header .title a {
+  color: #a00;
+  -webkit-transition: color 0.15s ease-in-out;
+  -webkit-transition-delay: 0;
+  -moz-transition: color 0.15s ease-in-out 0;
+  -o-transition: color 0.15s ease-in-out 0;
+  transition: color 0.15s ease-in-out 0;
+}
+/* line 114, ../scss/main.scss */
+.header .title a:hover {
+  color: #900000;
+  -webkit-transition: color 0.15s ease-in-out;
+  -webkit-transition-delay: 0;
+  -moz-transition: color 0.15s ease-in-out 0;
+  -o-transition: color 0.15s ease-in-out 0;
+  transition: color 0.15s ease-in-out 0;
+}
+/* line 120, ../scss/main.scss */
+.header .subtitle {
+  margin-bottom: 0;
+  color: #666666;
+}
+/* line 124, ../scss/main.scss */
+.header .extra {
+  color: #aaa;
+}
+/* line 126, ../scss/main.scss */
+.header .extra:hover {
+  color: #000;
+}
+
+/* line 131, ../scss/main.scss */
+.footer {
+  margin-top: 5rem;
+  font-size: 2rem;
+  color: #666;
+  text-align: center;
+}
+/* line 136, ../scss/main.scss */
+.footer .contact {
+  margin: 0 auto;
+}
+/* line 137, ../scss/main.scss */
+.footer .social-icons {
+  position: relative;
+}
+/* line 139, ../scss/main.scss */
+.footer .social-icons a {
+  color: #8085C1;
+  -webkit-transition: color 0.15s ease-in-out;
+  -webkit-transition-delay: 0;
+  -moz-transition: color 0.15s ease-in-out 0;
+  -o-transition: color 0.15s ease-in-out 0;
+  transition: color 0.15s ease-in-out 0;
+}
+/* line 142, ../scss/main.scss */
+.footer .social-icons a:first-child {
+  margin: 0 1rem;
+}
+/* line 145, ../scss/main.scss */
+.footer .social-icons a:hover {
+  -webkit-transition: color 0.15s ease-in-out;
+  -webkit-transition-delay: 0;
+  -moz-transition: color 0.15s ease-in-out 0;
+  -o-transition: color 0.15s ease-in-out 0;
+  transition: color 0.15s ease-in-out 0;
+  color: #484e93;
+  text-decoration: none;
+}
+/* line 151, ../scss/main.scss */
+.footer .social-icons a [class^="icon-"]:before,
+.footer .social-icons a [class*=" icon-"]:before {
+  position: relative;
+  left: 4px;
+}
+/* line 156, ../scss/main.scss */
+.footer .social-icons .hover-over {
+  position: absolute;
+  bottom: -2rem;
+  left: -1.8rem;
+  font-size: .8rem;
+  line-height: 1.2;
+  text-align: center;
+  background-color: #d8d8d8;
+  border: 1px solid #bbbbbb;
+  border-radius: .25rem;
+  padding: .4rem;
+  width: 6.5rem;
+  text-shadow: 0 1px 1px #fff;
+  box-shadow: inset 0 0 5px rgba(204, 204, 204, 0.05);
+}
+/* line 170, ../scss/main.scss */
+.footer .social-icons .hover-over:after {
+  position: absolute;
+  top: -5px;
+  left: -webkit-calc(50% - 3px);
+  left: calc(50% - 3px);
+  content: " ";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #d8d8d8;
+}
+/* line 182, ../scss/main.scss */
+.footer .social-icons .hover-over:before {
+  content: " ";
+  position: absolute;
+  top: -6px;
+  left: -webkit-calc(50% - 3px);
+  left: calc(50% - 3px);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #bbbbbb;
+}
+/* line 196, ../scss/main.scss */
+.footer .rss {
+  margin-top: 1.1rem;
+  margin-right: -.2rem;
+  float: right;
+}
+/* line 200, ../scss/main.scss */
+.footer .rss img {
+  border: 0;
+}
+
+/*****************************************************************************/
+/* Posts
+/*****************************************************************************/
+/* standard */
+/* line 211, ../scss/main.scss */
+.post {
+  /* terminal */
+}
+/* line 212, ../scss/main.scss */
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4rem;
+}
+/* line 216, ../scss/main.scss */
+.post pre code {
+  border: none;
+}
+/* line 221, ../scss/main.scss */
+.post ul,
+.post ol {
+  margin-left: 1.35rem;
+}
+/* line 224, ../scss/main.scss */
+.post code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2rem;
+}
+/* line 231, ../scss/main.scss */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+/* line 235, ../scss/main.scss */
+.post pre.terminal code {
+  background-color: #333;
+}

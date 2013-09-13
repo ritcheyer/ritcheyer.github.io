@@ -7,45 +7,106 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        <link href="/assets/css/syntax.css" rel="stylesheet">
+
+        <!-- Bootstrap and Font Awesome via CDN -->
+        <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href="/css/main.css" rel="stylesheet">
+        <link href="/assets/css/main.css" rel="stylesheet">
 
-        <!-- Typekit! -->
+        <!-- Typekit -->
         <script type="text/javascript" src="//use.typekit.net/nsh3nmk.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         
+        <script type="text/javascript">
+        $(document).ready(function(){
+            
+            // Open new window w/o using target="_blank"
+            $('[data-action="external"]').click(function(e){
+                e.preventDefault();
+                var launchNewPage = $(e.target).parent()[0].href
+                window.open(launchNewPage);
+            });
+            
+            $('.social-icons a').hover(function(e){
+                e.stopPropagation();
+                var $this = $(this),
+                    myTitle = $this.attr('title');
+                
+                $this.parent().append('<div class="hide hover-over" />');
+                
+                $this.next().text(myTitle).fadeIn(400, function(){
+                    $(this).removeClass('hide').removeAttr('style');
+                });
+            },
+            function(){
+                var $this = $(this);
+                $this.next('div').fadeOut('fast', function(){
+                    $(this).remove();
+                });
+            });
+        });
+            
+        </script>
     </head>
     <body>
 
         <div class="container">
-          <section class="site">
-            <header class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <p class="subtitle">You've reached the internet home of Eric Ritchey</p>
-              <a class="extra" href="/">home</a>
-            </header>
+            <section class="site">
+                <header class="header">
+                    <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+                    <h2 class="subtitle">Building Hand Crafted User Experiences, 8 years running.</h2>
+                    <!-- <a class="extra" href="/">home</a> -->
+                </header>
 
                 {{ content }}
 
-            <footer class="footer">
-              <div class="contact">
-                <p>
-                  <a href="mailto:eric.ritchey.io@eandjdesign.com" title="Email me">Eric Ritchey</a><br />
-                  User Experience Developer with 10 years of experience<br />
-                </p>
-              </div>
-              <div class="contact">
-                <p>
-                  <i class="icon-github"></i> <a href="http://github.com/ritcheyer/">github.com/ritcheyer</a><br />
-                  <i class="icon-twitter"></i> <a href="http://twitter.com/ritcheyer/">twitter.com/ritcheyer</a><br />
-                </p>
-              </div>
-            </footer>
-          </section>
+                <footer class="footer">
+                    <h2 class="subtitle">Wanna get in touch?</h2>
+                    <p class="contact">
+                        <span class="social-icons">
+                            <a href="mailto:eric.ritchey.io@eandjdesign.com" title="Email me">
+                                <i class="icon-envelope"></i>
+                            </a>
+                        </span>
+                        <span class="social-icons">
+                            <a href="http://github.com/ritcheyer/" title="See my Githubs" data-action="external">
+                                <i class="icon-github-sign"></i>
+                            </a>
+                        </span>
+                        <span class="social-icons">
+                            <a href="https://bitbucket.org/ritcheyer/" title="See my Buckets" data-action="external">
+                                <i class="icon-bitbucket-sign"></i>
+                            </a>
+                        </span>
+                        <span class="social-icons">
+                            <a href="http://twitter.com/ritcheyer/" title="Follow me" data-action="external">
+                                <i class="icon-twitter-sign"></i>
+                            </a>
+                        </span>
+                        <span class="social-icons">
+                            <a href="http://linkedin.com/in/ericritchey/" title="Contact me" data-action="external">
+                                <i class="icon-linkedin-sign"></i>
+                            </a>
+                        </span>
+                        <span class="social-icons">
+                            <a href="http://flickr.com/ritcheyer/" title="See my photos" data-action="external">
+                                <i class="icon-flickr"></i>
+                            </a>
+                        </span>
+                        <span class="social-icons">
+                            <a href="http://instagram.com/ritcheyer/" title="More photos" data-action="external">
+                                <i class="icon-instagram"></i>
+                            </a>
+                        </span>
+                    </p>
+                </footer>
+            </section>
         </div> <!-- /container -->
 
     </body>
