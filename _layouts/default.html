@@ -10,36 +10,42 @@
         <link rel="stylesheet" href="/css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
 
+        <!-- Typekit! -->
+        <script type="text/javascript" src="//use.typekit.net/nsh3nmk.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
     </head>
     <body>
 
         <div class="container">
-          <div class="site">
-            <div class="header">
+          <section class="site">
+            <header class="header">
               <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+              <p class="subtitle">You've reached the internet home of Eric Ritchey</p>
               <a class="extra" href="/">home</a>
-            </div>
+            </header>
 
                 {{ content }}
 
-            <div class="footer">
+            <footer class="footer">
               <div class="contact">
                 <p>
-                  Your Name<br />
-                  What You Are<br />
-                  your@email.com
+                  <a href="mailto:eric.ritchey.io@eandjdesign.com" title="Email me">Eric Ritchey</a><br />
+                  User Experience Developer with 10 years of experience<br />
                 </p>
               </div>
               <div class="contact">
                 <p>
-                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
-                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
+                  <i class="icon-github"></i> <a href="http://github.com/ritcheyer/">github.com/ritcheyer</a><br />
+                  <i class="icon-twitter"></i> <a href="http://twitter.com/ritcheyer/">twitter.com/ritcheyer</a><br />
                 </p>
               </div>
-            </div>
-          </div>
+            </footer>
+          </section>
         </div> <!-- /container -->
 
     </body>
