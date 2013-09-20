@@ -1,0 +1,66 @@
+/*
+ * Mixin Library
+*/
+
+
+$default-border-radius : 2px;
+@mixin border-radius($radius: $default-border-radius) { border-radius: $radius; }
+
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@mixin no-touchy {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+@mixin simple-transition($property: all, $duration: 0.15s, $function: ease-in-out, $delay: 0) {
+  @include transition($property $duration $function $delay);
+}
+
+@mixin transform-rotate($deg) {
+  -webkit-transform: rotate($deg);
+      -ms-transform: rotate($deg);
+          transform: rotate($deg);
+}
+
+// my hero: https://twitter.com/bermonpainter/status/355481499258200065
+@mixin zebra($child, $background-color: $palette-grey-light) {
+  #{$child}:nth-child(even) {
+    background-color: $background-color;
+  }
+}
+
+@mixin group {
+  display: inline-block;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  &* html .group { height: 1%; }
+  display: block;
+}
+
+// Animations - Progressive Enhancement, FTW
+// ------------------------------------------------------
+//@-ms-keyframes pulsate {
+//  0%   { text-shadow: 0 0 0 transparent; }
+//  100% { text-shadow: 0 0 4px lighten($success-dark, .5); }
+//}
+//@-moz-keyframes pulsate {
+//  0%   { text-shadow: 0 0 0 transparent; }
+//  100% { text-shadow: 0 0 4px lighten($success-dark, .5); }
+//}
+//@-webkit-keyframes pulsate {
+//  0%   { text-shadow: 0 0 0 transparent; }
+//  100% { text-shadow: 0 0 4px lighten($success-dark, .5); }
+//}

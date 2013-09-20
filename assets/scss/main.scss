@@ -2,10 +2,7 @@
 /* Mixins
 /*****************************************************************************/
 @import "compass";
-@mixin simple-transition($property: all, $duration: 0.15s, $function: ease-in-out, $delay: 0) {
-	@include transition($property $duration $function $delay);
-}
-
+@import "mixins";
 
 
 /*****************************************************************************/
@@ -18,11 +15,11 @@
 }
 
 html,
-body { height: 100%; }
+body { height: 106%; }
 
 body {
   background-color: #fff;
-  font: 13.34px Helvetica, Arial, sans-serif;
+  font: 13.34px "Helvetica Neue", Arial, sans-serif;
   font-size: small;
   text-align: center;
 }
@@ -121,13 +118,60 @@ a {
     margin-bottom: 0;
     color: rgb(102, 102, 102);
   }
-  .extra {
-    color: #aaa;
+}
+.site-nav {
+  /*! Yea, this is graphic is from Basecamp. */
+  background: url(https://basecamp.global.ssl.fastly.net/assets/wallpapers/paper-d58343f25c9bf8b2b0dcd72e25bf7644.jpg) repeat top left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+//  min-height: 24px;
+  opacity: .96;
+  padding: .25rem .5rem;
+  
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 -1px 0 rgb(255, 255, 255);
+
+  text-align: left;
+  font-size: .8rem;
+  .home & {
+    padding: 0;
+    border-top: 5px solid #8085C1;
+    background-image: none;
+    border-bottom: 0;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  @include simple-transition(opacity);
+
+  a {
+    text-shadow: 0 1px #fff;
+    color: #585858;
+    font-weight: normal;
     &:hover {
-      color: #000;
+      color: darken(#585858, 10%);
+      [class*="icon-"] {
+        opacity: 1;
+
+        @include simple-transition(opacity);
+      }
+    }
+    [class*="icon-"] {
+      opacity: .5;
+      position: relative;
+      top: 1px;
+      font-size: .9rem;
+
+      @include simple-transition(opacity);
     }
   }
-}
+  &:hover {
+    opacity: 1;
+    @include simple-transition(opacity);
+  }
+
+}  
 .footer {
   margin-top: 5rem;
   font-size: 2rem;
@@ -203,7 +247,7 @@ a {
   }
 }
 
-
+.typekit-badge { display: none !important; }
 /*****************************************************************************/
 /* Posts
 /*****************************************************************************/
