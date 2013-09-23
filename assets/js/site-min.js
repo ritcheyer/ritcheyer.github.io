@@ -1,0 +1,1 @@
+$(document).ready(function(){$('[data-action="external"]').click(function(e){e.preventDefault();var t=$(e.target).parent()[0].href;window.open(t)})});

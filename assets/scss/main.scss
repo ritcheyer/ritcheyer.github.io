@@ -14,8 +14,8 @@
   padding: 0;
 }
 
-html,
-body { height: 106%; }
+//html,
+//body { height: 106%; }
 
 body {
   background-color: #fff;
@@ -32,23 +32,41 @@ h5,
 h6 {
   font-family: 'Chunk';
   line-height: 1;
-  margin: auto;
+  margin: 0 auto;
+  
 }
-
-//h1 { margin-bottom: 1rem; }
+h2 {
+  line-height: 1.4;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 1px 0 #fff;
+  color: darken(#8085C1, 20%);
+}
 
 .subtitle {
   font-size: 1.5rem;
   line-height: 1.5;
 }
 
-p { margin: 0 0 1rem 0; }
+p { margin: 0 0 1rem 0; font-weight: lighter; }
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-bottom: 3rem;
+}
 
 a {
-  color: #00a;
+  color: #8085C1;
   text-decoration: none;
-  &:hover   { color: #000; }
-  &:visited { color: #a0a; }
+  @include simple-transition(color);
+  &:hover,
+  &:visited {
+    color: darken(#8085C1, 20%);
+    @include simple-transition(color);
+    text-decoration: none;
+  }
 }
 
 .hide {
@@ -89,11 +107,17 @@ a {
 /* Site
 /*****************************************************************************/
 .site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42rem;
-  margin: 3rem auto 2rem;
-  line-height: 1.5rem;
+  font-size: 130%;
+  p {
+    font-size: 110%;
+  }
+  li {
+    margin-bottom: .75rem;
+  }
+  text-align: left;
+  max-width: 42rem;
+  margin: 3rem auto;
+  line-height: 1.5;
   .meta { color: #aaa; }
 }
 .header {
@@ -103,8 +127,21 @@ a {
     text-decoration: none;
   }
   .title {
-    font-size: 6rem;
     display: block;
+
+    font-size: 5rem;
+    .resume & {
+      font-size: 4rem;
+    }
+    line-height: 1.2;
+    .site & {
+      color: #a00;
+      @include simple-transition(color);
+      &:hover {
+        color: darken(#a00, 5%);
+        @include simple-transition(color);
+      }
+    }
     a {
       color: #a00;
       @include simple-transition(color);
@@ -126,7 +163,6 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-//  min-height: 24px;
   opacity: .96;
   padding: .25rem .5rem;
   
@@ -171,24 +207,68 @@ a {
     @include simple-transition(opacity);
   }
 
-}  
+}
+
+.footnotes {
+  color: #444;
+  font-size: .8rem;
+  hr {
+    height: 0;
+    border: 0;
+    border-top: 1px solid #999;
+    box-shadow: 0 -1px 0 #fff;
+  }
+  p {
+    margin-bottom: .25rem;
+  }
+  [rev="footnote"] {
+    position: relative;
+    top: 2px;
+  }
+}
+
+.design-quote {
+  margin: 5rem 0;
+  text-align: center;
+  .quote {
+    margin: 0;
+  }
+}
+
 .footer {
-  margin-top: 5rem;
-  font-size: 2rem;
+  text-transform: lowercase;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: .5rem 0;
+  border-top: 1px solid #fff;
+  background-color: #f3f3f3;
+  box-shadow: 0 -1px 0 #ccc;
   color: #666;
   text-align: center;
-  .contact { margin: 0 auto; }
+  font-size: 110%;
+  opacity: .95;
+  @include simple-transition(opacity);
+  &:hover {
+    opacity: 1;
+    @include simple-transition(opacity);
+  }
+  .contact {
+    margin: 0 auto;
+  }
+
   .social-icons {
     position: relative;
     a {
-      color: #8085C1;
+      color: #484E93;
       @include simple-transition(color);
       &:first-child {
         margin: 0 1rem;
       }
       &:hover {
         @include simple-transition(color);
-        color: darken(#8085C1, 20%);
+        color: darken(#484E93, 20%);
         text-decoration: none;
       }
       [class^="icon-"]:before,
@@ -282,3 +362,21 @@ a {
     }
   }
 }
+
+
+
+
+/*****************************************************************************/
+/* Media Queries
+/*****************************************************************************/
+@media (max-width: 550px) {
+  .header .title { font-size: 4rem; }
+  .site p { font-size: 100%; }
+}
+@media (max-width: 675px) {
+  .header .title { line-height: 1; }
+}
+@media (max-width: 45rem) {
+  .site { margin: 3rem 1rem; }
+}
+
