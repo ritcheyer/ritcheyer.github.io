@@ -14,14 +14,11 @@
   padding: 0;
 }
 
-//html,
-//body { height: 106%; }
-
 body {
   background-color: #fff;
-  font: 13.34px "Helvetica Neue", Arial, sans-serif;
   font-size: small;
   text-align: center;
+  font: 13.34px "Helvetica Neue", Arial, sans-serif;
 }
 
 h1,
@@ -30,10 +27,9 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0 auto;
   font-family: 'Chunk';
   line-height: 1;
-  margin: 0 auto;
-  
 }
 h2 {
   line-height: 1.4;
@@ -53,9 +49,7 @@ h2 + p,
 h3 + p,
 h4 + p,
 h5 + p,
-h6 + p {
-  margin-bottom: 3rem;
-}
+h6 + p { margin-bottom: 3rem; }
 
 a {
   color: #8085C1;
@@ -69,9 +63,7 @@ a {
   }
 }
 
-.hide {
-  display: none;
-}
+.hide { display: none; }
 
 .highlight {
   /*
@@ -111,15 +103,20 @@ a {
   p {
     font-size: 110%;
   }
+  ul, ol {
+    margin-left: 1rem;
+  }
   li {
     margin-bottom: .75rem;
   }
   text-align: left;
   max-width: 42rem;
+  min-width: 320px;
   margin: 3rem auto;
   line-height: 1.5;
   .meta { color: #aaa; }
 }
+
 .header {
   text-align: center;
   a {
@@ -156,8 +153,9 @@ a {
     color: rgb(102, 102, 102);
   }
 }
+
 .site-nav {
-  /*! Yea, this is graphic is from Basecamp. */
+  /*! Yea, this graphic is from Basecamp. */
   background: url(https://basecamp.global.ssl.fastly.net/assets/wallpapers/paper-d58343f25c9bf8b2b0dcd72e25bf7644.jpg) repeat top left;
   position: fixed;
   top: 0;
@@ -258,65 +256,65 @@ a {
     margin: 0 auto;
   }
 
-  .social-icons {
-    position: relative;
-    a {
-      color: #484E93;
-      @include simple-transition(color);
-      &:first-child {
-        margin: 0 1rem;
-      }
-      &:hover {
-        @include simple-transition(color);
-        color: darken(#484E93, 20%);
-        text-decoration: none;
-      }
-      [class^="icon-"]:before,
-      [class*=" icon-"]:before {
-        position: relative;
-        left: 4px;
-      }
-    }
-    .hover-over {
-      position: absolute;
-      bottom: -2rem;
-      left: -1.8rem;
-      font-size: .8rem;
-      line-height: 1.2;
-      text-align: center;
-      background-color: rgb(216, 216, 216);
-      border: 1px solid rgb(187, 187, 187);
-      border-radius: .25rem;
-      padding: .4rem;
-      width: 6.5rem;
-      text-shadow: 0 1px 1px #fff;
-      box-shadow: inset 0 0 5px rgba(204, 204, 204,.05);
-      &:after {
-        position: absolute;
-        top: -5px;
-        left: -webkit-calc(50% - 3px);
-        left:         calc(50% - 3px);
-        content: " ";
-        width: 0; 
-        height: 0; 
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid rgb(216, 216, 216);
-      }
-      &:before {
-        content: " ";
-        position: absolute;
-        top: -6px;
-        left: -webkit-calc(50% - 3px);
-        left:         calc(50% - 3px);
-        width: 0; 
-        height: 0; 
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid rgb(187, 187, 187);
-      }
-    }
-  }
+  //  .social-icons {
+  //    position: relative;
+  //    a {
+  //      color: #484E93;
+  //      @include simple-transition(color);
+  //      &:first-child {
+  //        margin: 0 1rem;
+  //      }
+  //      &:hover {
+  //        @include simple-transition(color);
+  //        color: darken(#484E93, 20%);
+  //        text-decoration: none;
+  //      }
+  //      [class^="icon-"]:before,
+  //      [class*=" icon-"]:before {
+  //        position: relative;
+  //        left: 4px;
+  //      }
+  //    }
+  //    .hover-over {
+  //      position: absolute;
+  //      bottom: -2rem;
+  //      left: -1.8rem;
+  //      font-size: .8rem;
+  //      line-height: 1.2;
+  //      text-align: center;
+  //      background-color: rgb(216, 216, 216);
+  //      border: 1px solid rgb(187, 187, 187);
+  //      border-radius: .25rem;
+  //      padding: .4rem;
+  //      width: 6.5rem;
+  //      text-shadow: 0 1px 1px #fff;
+  //      box-shadow: inset 0 0 5px rgba(204, 204, 204,.05);
+  //      &:after {
+  //        position: absolute;
+  //        top: -5px;
+  //        left: -webkit-calc(50% - 3px);
+  //        left:         calc(50% - 3px);
+  //        content: " ";
+  //        width: 0; 
+  //        height: 0; 
+  //        border-left: 5px solid transparent;
+  //        border-right: 5px solid transparent;
+  //        border-bottom: 5px solid rgb(216, 216, 216);
+  //      }
+  //      &:before {
+  //        content: " ";
+  //        position: absolute;
+  //        top: -6px;
+  //        left: -webkit-calc(50% - 3px);
+  //        left:         calc(50% - 3px);
+  //        width: 0; 
+  //        height: 0; 
+  //        border-left: 5px solid transparent;
+  //        border-right: 5px solid transparent;
+  //        border-bottom: 5px solid rgb(187, 187, 187);
+  //      }
+  //    }
+  //  }
   .rss {
     margin-top: 1.1rem;
     margin-right: -.2rem;
@@ -369,14 +367,27 @@ a {
 /*****************************************************************************/
 /* Media Queries
 /*****************************************************************************/
-@media (max-width: 550px) {
-  .header .title { font-size: 4rem; }
-  .site p { font-size: 100%; }
+@media (max-width: 45rem) {
+  .site { margin: 3rem 1rem; }
 }
 @media (max-width: 675px) {
   .header .title { line-height: 1; }
 }
-@media (max-width: 45rem) {
-  .site { margin: 3rem 1rem; }
+@media (max-width: 550px) {
+  .header .title { font-size: 4rem; }
+  .site p,
+  .site li { font-size: 100%; }
+}
+@media (max-width: 400px) {
+  .header .title { font-size: 3rem; }
+  h2 { font-size: 1.5rem; text-align: center; }
+  .site p,
+  .site li { font-size: 90%; }
+  .footnotes {
+    font-size: 1rem;
+    ol {
+      padding: 1rem;
+    }
+  }
 }
 

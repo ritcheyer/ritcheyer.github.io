@@ -6,8 +6,7 @@ $(document).ready(function(){
        var launchNewPage = $(e.target).parent()[0].href;
        window.open(launchNewPage);
    });
-   
-	 // don't have this on the site anymore.
+   // don't have this on the site anymore.
    // $('.social-icons a').hover(function(e){
    //     e.stopPropagation();
    //     var $this = $(this),
