@@ -173,6 +173,7 @@ a {
   border-bottom: 1px solid #ccc;
   box-shadow: inset 0 -1px 0 rgb(255, 255, 255);
 
+  color: #585858;
   text-align: left;
   font-size: .8rem;
 
@@ -404,5 +405,18 @@ a {
       padding: 1rem;
     }
   }
+  
+  .site-nav {
+    .home-link,
+    .me-everywhere,
+    .download-resume {
+      display: block;
+      text-align: center;
+      float: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
 }
 

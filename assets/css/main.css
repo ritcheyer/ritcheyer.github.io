@@ -234,6 +234,7 @@ a:hover, a:visited {
   padding: .25rem .5rem;
   border-bottom: 1px solid #ccc;
   box-shadow: inset 0 -1px 0 white;
+  color: #585858;
   text-align: left;
   font-size: .8rem;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -242,7 +243,7 @@ a:hover, a:visited {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 181, ../scss/main.scss */
+/* line 182, ../scss/main.scss */
 .home .site-nav {
   padding: 0;
   border-top: 5px solid #8085C1;
@@ -250,17 +251,17 @@ a:hover, a:visited {
   border-bottom: 0;
   box-shadow: 0 0 0 transparent;
 }
-/* line 189, ../scss/main.scss */
+/* line 190, ../scss/main.scss */
 .site-nav a {
   text-shadow: 0 1px #fff;
   color: #585858;
   font-weight: normal;
 }
-/* line 193, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 .site-nav a:hover {
   color: #3f3f3f;
 }
-/* line 195, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .site-nav a:hover [class*="icon-"] {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -269,7 +270,7 @@ a:hover, a:visited {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 201, ../scss/main.scss */
+/* line 202, ../scss/main.scss */
 .site-nav a [class*="icon-"] {
   opacity: .5;
   position: relative;
@@ -281,7 +282,7 @@ a:hover, a:visited {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 210, ../scss/main.scss */
+/* line 211, ../scss/main.scss */
 .site-nav:hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -291,54 +292,54 @@ a:hover, a:visited {
   transition: opacity 0.15s ease-in-out 0;
 }
 
-/* line 217, ../scss/main.scss */
+/* line 218, ../scss/main.scss */
 .me-everywhere {
   margin: 0 1rem 0 0;
   padding: 0;
   list-style: none;
   float: right;
 }
-/* line 222, ../scss/main.scss */
+/* line 223, ../scss/main.scss */
 .me-everywhere li {
   display: inline-block;
   margin: 0 .25rem;
   padding: 0;
 }
 
-/* line 229, ../scss/main.scss */
+/* line 230, ../scss/main.scss */
 .footnotes {
   color: #444;
   font-size: .8rem;
 }
-/* line 232, ../scss/main.scss */
+/* line 233, ../scss/main.scss */
 .footnotes hr {
   height: 0;
   border: 0;
   border-top: 1px solid #999;
   box-shadow: 0 -1px 0 #fff;
 }
-/* line 238, ../scss/main.scss */
+/* line 239, ../scss/main.scss */
 .footnotes p {
   display: inline;
   margin-bottom: .25rem;
 }
-/* line 242, ../scss/main.scss */
+/* line 243, ../scss/main.scss */
 .footnotes [rev="footnote"] {
   position: relative;
   top: 2px;
 }
 
-/* line 248, ../scss/main.scss */
+/* line 249, ../scss/main.scss */
 .design-quote {
   margin: 5rem 0;
   text-align: center;
 }
-/* line 251, ../scss/main.scss */
+/* line 252, ../scss/main.scss */
 .design-quote .quote {
   margin: 0;
 }
 
-/* line 256, ../scss/main.scss */
+/* line 257, ../scss/main.scss */
 .footer {
   text-transform: lowercase;
   position: fixed;
@@ -359,7 +360,7 @@ a:hover, a:visited {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 271, ../scss/main.scss */
+/* line 272, ../scss/main.scss */
 .footer:hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -368,22 +369,22 @@ a:hover, a:visited {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 275, ../scss/main.scss */
+/* line 276, ../scss/main.scss */
 .footer .contact {
   margin: 0 auto;
 }
-/* line 338, ../scss/main.scss */
+/* line 339, ../scss/main.scss */
 .footer .rss {
   margin-top: 1.1rem;
   margin-right: -.2rem;
   float: right;
 }
-/* line 342, ../scss/main.scss */
+/* line 343, ../scss/main.scss */
 .footer .rss img {
   border: 0;
 }
 
-/* line 348, ../scss/main.scss */
+/* line 349, ../scss/main.scss */
 .typekit-badge {
   display: none !important;
 }
@@ -392,38 +393,38 @@ a:hover, a:visited {
 /* Posts
 /*****************************************************************************/
 /* standard */
-/* line 353, ../scss/main.scss */
+/* line 354, ../scss/main.scss */
 .post {
   /* terminal */
 }
-/* line 354, ../scss/main.scss */
+/* line 355, ../scss/main.scss */
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4rem;
 }
-/* line 358, ../scss/main.scss */
+/* line 359, ../scss/main.scss */
 .post pre code {
   border: none;
 }
-/* line 363, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 .post ul,
 .post ol {
   margin-left: 1.35rem;
 }
-/* line 366, ../scss/main.scss */
+/* line 367, ../scss/main.scss */
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .2rem;
 }
-/* line 373, ../scss/main.scss */
+/* line 374, ../scss/main.scss */
 .post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
 }
-/* line 377, ../scss/main.scss */
+/* line 378, ../scss/main.scss */
 .post pre.terminal code {
   background-color: #333;
 }
@@ -432,37 +433,48 @@ a:hover, a:visited {
 /* Media Queries
 /*****************************************************************************/
 @media (max-width: 45rem) {
-  /* line 391, ../scss/main.scss */
+  /* line 392, ../scss/main.scss */
   .site {
     margin: 3rem 1rem;
   }
 }
 @media (max-width: 550px) {
-  /* line 395, ../scss/main.scss */
+  /* line 396, ../scss/main.scss */
   .site p,
   .site li {
     font-size: 100%;
   }
 }
 @media (max-width: 400px) {
-  /* line 398, ../scss/main.scss */
+  /* line 399, ../scss/main.scss */
   h2 {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  /* line 400, ../scss/main.scss */
+  /* line 401, ../scss/main.scss */
   .site p,
   .site li {
     font-size: 90%;
   }
 
-  /* line 401, ../scss/main.scss */
+  /* line 402, ../scss/main.scss */
   .footnotes {
     font-size: 1rem;
   }
-  /* line 403, ../scss/main.scss */
+  /* line 404, ../scss/main.scss */
   .footnotes ol {
     padding: 1rem;
+  }
+
+  /* line 412, ../scss/main.scss */
+  .site-nav .home-link,
+  .site-nav .me-everywhere,
+  .site-nav .download-resume {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: 0;
+    padding: 0;
   }
 }
