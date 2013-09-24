@@ -4,18 +4,30 @@ title: Eric Ritchey | User Experience Developer | Campbell, CA
 class: home
 ---
 
-<header class="header">
-    <h1 class="title">
-        <a href="/">{{ site.name }}</a>
-    </h1>
+<header class="header home-page">
+    <h1 class="title">{{ site.name }}</h1>
     <h2 class="subtitle">Building Hand Crafted User Experiences, 8 years running.</h2>
 </header>
+
 <div id="home">
-    <p class="highlight">I ain't done yet. Come back in a few days.</p>
-        <!-- <h1>Blog Posts</h1>
-        <ul class="posts">
+
+    <p class="highlight">
+        <a href="/resume/" title="View my Resume">My Resum&eacute;</a>
+    </p>
+
+    {% comment %}
         {% for post in site.posts %}
-            <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+            <p class="highlight">
+                <span>{{ post.date | timeago }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+            </p>
         {% endfor %}
-        </ul> -->
+    {% endcomment %}
+
 </div>
+<p class="contact">
+    My name is <a href="mailto:eric@eandjdesign.com">Eric Ritchey</a>. You can find me on
+    <a href="http://github.com/ritcheyer/" title="See my Githubs" target="_blank">Github</a>, 
+    <a href="https://bitbucket.org/ritcheyer/" title="See my Buckets" target="_blank">Bitbucket</a>, 
+    <a href="http://twitter.com/ritcheyer/" title="Follow me" target="_blank">Twitter</a> and 
+    <a href="http://linkedin.com/in/ericritchey/" title="Contact me" target="_blank">LinkedIn</a>.
+</p>
