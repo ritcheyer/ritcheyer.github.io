@@ -21,6 +21,13 @@ body {
   font: 13.34px "Helvetica Neue", Arial, sans-serif;
 }
 
+html,
+body {
+  width: -webkit-calc(100% - 2rem);
+  width:         calc(100% - 2rem);
+  margin: auto;
+}
+
 h1,
 h2,
 h3,
@@ -105,15 +112,9 @@ a {
 /*****************************************************************************/
 .site {
   font-size: 130%;
-  p {
-//    font-size: 110%;
-  }
-  ul, ol {
-    margin-left: 1rem;
-  }
-  li {
-    margin-bottom: .75rem;
-  }
+  ul,
+  ol { margin-left: 1rem; }
+  li { margin-bottom: .75rem; }
   text-align: left;
   max-width: 42rem;
   min-width: 320px;
@@ -220,6 +221,7 @@ a {
   padding: 0;
   list-style: none;
   float: right;
+  display: inline;
   li {
     display: inline-block;
     margin: 0 .25rem;
@@ -397,6 +399,7 @@ a {
 }
 @media (max-width: 400px) {
   h2 { font-size: 1.5rem; text-align: center; }
+  .site { margin: 4rem 1rem 2rem; }
   .site p,
   .site li { font-size: 90%; }
   .footnotes {
@@ -419,4 +422,3 @@ a {
   }
 
 }
-
