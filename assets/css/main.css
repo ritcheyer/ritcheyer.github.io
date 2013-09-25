@@ -143,10 +143,6 @@ a:hover, a:visited {
   margin: 3rem auto;
   line-height: 1.5;
 }
-/* line 108, ../scss/main.scss */
-.site p {
-  font-size: 110%;
-}
 /* line 111, ../scss/main.scss */
 .site ul, .site ol {
   margin-left: 1rem;
