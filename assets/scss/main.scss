@@ -23,8 +23,7 @@ body {
 
 html,
 body {
-  width: -webkit-calc(100% - 2rem);
-  width:         calc(100% - 2rem);
+  width: 100%;
   margin: auto;
 }
 
@@ -242,6 +241,10 @@ a {
     display: inline;
     margin-bottom: .25rem;
   }
+  ol {
+    margin: 0;
+    padding: 1rem 1.5rem;
+  }
   [rev="footnote"] {
     position: relative;
     top: 2px;
@@ -391,23 +394,21 @@ a {
 /* Media Queries
 /*****************************************************************************/
 @media (max-width: 45rem) {
-  .site { margin: 3rem 1rem; }
+  .site { margin: 3rem auto; }
 }
 @media (max-width: 550px) {
   .site p,
   .site li { font-size: 100%; }
 }
 @media (max-width: 400px) {
+  .header .title { padding-top: 2rem; }
   h2 { font-size: 1.5rem; text-align: center; }
-  .site { margin: 4rem 1rem 2rem; }
-  .site p,
-  .site li { font-size: 90%; }
-  .footnotes {
-    font-size: 1rem;
-    ol {
-      padding: 1rem;
-    }
+  .site {
+    margin: 4rem auto 2rem;
+    padding: 0 1rem;
   }
+  .site p,
+  .site li { font-size: 110%; }
   
   .site-nav {
     .home-link,
