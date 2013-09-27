@@ -17,9 +17,9 @@ class: home
 
     {% comment %}
         {% for post in site.posts %}
-            <p class="highlight">
-                <span>{{ post.date | timeago }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
-            </p>
+        <p>
+            <span>{{ post.date | timeago }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+        </p>
         {% endfor %}
     {% endcomment %}
 

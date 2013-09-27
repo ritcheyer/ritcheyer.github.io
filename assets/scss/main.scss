@@ -51,12 +51,12 @@ h2 {
 }
 
 p { margin: 0 0 1rem 0; }
-h1 + p,
-h2 + p,
-h3 + p,
-h4 + p,
-h5 + p,
-h6 + p { margin-bottom: 3rem; }
+//h1 + p,
+//h2 + p,
+//h3 + p,
+//h4 + p,
+//h5 + p,
+//h6 + p { margin-bottom: 3rem; }
 
 a {
   color: #8085C1;
@@ -67,6 +67,20 @@ a {
     color: darken(#8085C1, 20%);
     @include simple-transition(color);
     text-decoration: none;
+  }
+}
+
+blockquote {
+  &.quote {
+    font-family: 'Chunk';
+    font-size: 2rem;
+  }
+  font-style: italic;
+  border-left: 5px solid #CCC;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  p {
+//    margin-bottom: 0;
   }
 }
 
@@ -110,15 +124,17 @@ a {
 /* Site
 /*****************************************************************************/
 .site {
+  padding: 0 1rem;
   font-size: 130%;
-  ul,
-  ol { margin-left: 1rem; }
-  li { margin-bottom: .75rem; }
   text-align: left;
   max-width: 42rem;
   min-width: 320px;
   margin: 3rem auto;
   line-height: 1.5;
+
+  ul,
+  ol { margin-left: 1rem; }
+  li { margin-bottom: .75rem; }
   .meta { color: #aaa; }
 }
 
@@ -254,9 +270,11 @@ a {
 .design-quote {
   margin: 5rem 0;
   text-align: center;
+  border: 0;
   .quote {
     margin: 0;
   }
+  .author { display: block;}
 }
 
 .footer {
@@ -397,18 +415,18 @@ a {
   .site { margin: 3rem auto; }
 }
 @media (max-width: 550px) {
-  .site p,
-  .site li { font-size: 100%; }
+  .site {
+    p,li { font-size: 100%; }
+  }
 }
 @media (max-width: 400px) {
+  .site-nav + h2,
   .header .title { padding-top: 2rem; }
   h2 { font-size: 1.5rem; text-align: center; }
   .site {
     margin: 4rem auto 2rem;
-    padding: 0 1rem;
+    .meta { text-align: center; }
   }
-  .site p,
-  .site li { font-size: 110%; }
   
   .site-nav {
     .home-link,
