@@ -18,7 +18,7 @@ class: home
     {% comment %}
         {% for post in site.posts %}
         <p>
-            <span>{{ post.date | timeago }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+            <span>{{ post.date | date_to_long_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
         </p>
         {% endfor %}
     {% endcomment %}
