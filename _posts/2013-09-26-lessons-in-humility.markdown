@@ -29,18 +29,18 @@ Try as I might, I was never able fit in with this group of extremely talented en
 I'm starting to realize a few things through this situation — and am still realizing. There are certain things in a job that I need to be successful, and there are certain things I need to be mindful of within my own heart and mind.
 
 ## To be successful I need:
-* **Someone who gives me freedom to be creative, but also the boundaries to be successful.**[^4]<br>Reflecting back, I had too much freedom and I ended up getting lost in all the tasks that needed to get done, rather than being able to focus on one or two things and do them well.
+* **Someone who gives me freedom to be creative, but also the boundaries to be successful.**[^4]<br>Reflecting back, I had too much freedom and I ended up getting lost in all the tasks that needed to get done, rather than being able to focus on one or two things and do them well.[^5]
 * **Support from my manager.**<br>If my manager doesn't know what I do, how can he support me? If my manager can't support me, then I've got no one on my team when the rubber meets the road, and a decision needs to be made that could affect the User Experience.
 * **A product that is engaging and interesting.**<br>In my last three jobs, I've had some really amazing opportunities to learn and grow as a User Experience Engineer and the challenges I faced in bringing designs to life in code were killer. I had a great time learning all the new tips and tricks. But I didn't care at all about the product. It wasn't that I didn't believe in it, they just didn't generate any interest for me.
 * **A team that is fun to be with.**<br>I'm going to be with these people 8, 10, 12+ hours a day, if we don't have "chemistry," then it's just going to be stressful for everyone involved. I love being around creative (designers AND engineers) people and working on solutions to make the product even better. Synergies!
 
-In a fantastic article entitled, "Firing and Being Fired," Vibhu Norby says[^5]:
+In a fantastic article entitled, "Firing and Being Fired," Vibhu Norby says[^6]:
 > People don't succeed long term at their job because they're just so good at what they do that nothing else matters. If they're at the right company, they have the right managers, or they love what they're doing, they'll succeed no matter how good they were when they started. Success at anything feeds on itself and delivers continuous fruits. 
 
 ## Things I need to be mindful of (and correct):
 * **I am not inherently patient.**<br>I want things, and I want them now. I have recently experienced this financially several times over in bloated credit card bills. I have experienced this in not taking the time to properly learn how to design or engineer something. And I have experienced this in the time I have been looking for a new job. I want the answers now, and that's not going to happen. HR departments are inherently slow. Once the resumé has been submitted, it's out of my hands and I need to learn how to be patient.
-* **I stink at not being in control.**<br>I pretend all the time that this one isn't really an issue for me, but it really is. I hate not controlling things in my life. This has manifested itself in so many ways — in wanting to structure my wife's day down to what chores she's going to be doing.[^6] I know, sick, right? I have too much on my plate already and here I go, trying to control yet one more thing.
-* **I am prideful and lack humility.**<br>Yes, everyone has issues with pride on some level. This experience has really brought me down a few notches, though. I've noticed that in the last two jobs, after I've been there long enough for the 'honeymoon phase' to wear off, and I start to really get grooving on my tasks, I start to get a bit prideful. I start to think, "I got this. Ain't no problem. Don't tell me how to do my job." This is a horrible attitude and only fosters bitterness in me towards my coworkers, and only makes my coworkers not want to be around me or even consult me on problems. I am viewed as antagonistic and berating. Talk about unhealthy working relationships…
+* **I stink at not being in control.**<br>I pretend all the time that this one isn't really an issue for me, but it really is. I hate not controlling things in my life. This has manifested itself in so many ways — in wanting to structure my wife's day down to what tasks she's going to be doing.[^7] I know, sick, right? I have too much on my plate already and here I go, trying to control yet one more thing.
+* **I am prideful and lack humility.**<br>Yes, everyone has issues with pride on some level. This experience has really brought me down a few notches, though. I've noticed that in the last two jobs, after I've been there long enough for the 'honeymoon phase' to wear off, and I start to really get grooving on my tasks, I start to get a bit prideful. I start to think, "I got this. Ain't no problem. Don't tell me how to do my job." This is a horrible attitude and only fosters bitterness in me towards my coworkers, and only makes my coworkers not want to be around me or even consult me on problems. I am viewed as antagonistic and berating. Talk about unhealthy working relationships&hellip;
 
 Wow, this turned out to be a much longer post than I thought. I plan on revisiting this topic in a couple weeks to see where things are, and what progress I've made.
 
@@ -54,6 +54,7 @@ Wow, this turned out to be a much longer post than I thought. I plan on revisiti
 [^2]: One of the engineers was from the Boston area so we had great discussions on the Red Sox and Patriots.
 [^3]: At the time of this writing, I've been married for 8 years to a lovely wife I can't imagine life without, a beautiful almost 2 year old son and another one expected in May 2014.
 [^4]: Vibhu Norby wrote a published great article a few hours after I had gotten home on this fateful day and  it hit me in the gut pretty hard: http://philosophically.com/firing-and-being-fired
-[^5: http://philosophically.com/firing-and-being-fired
-[^6]: I have such a gracious wife, I have no idea how she's stayed with me for this long, but I am so thankful she has.
+[^5]: Dan Pink in a TED Talk discusses intrinsic motivators within companies around the world: http://www.ted.com/talks/dan_pink_on_motivation.html
+[^6]: http://philosophically.com/firing-and-being-fired
+[^7]: I have such a gracious wife, I have no idea how she's stayed with me for this long, but I am so thankful she has.
 
