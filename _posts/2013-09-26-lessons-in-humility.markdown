@@ -53,8 +53,8 @@ Wow, this turned out to be a much longer post than I thought. I plan on revisiti
 [^1]: I was hoping/planning on using the big pay to put a down payment on a house.
 [^2]: One of the engineers was from the Boston area so we had great discussions on the Red Sox and Patriots.
 [^3]: At the time of this writing, I've been married for 8 years to a lovely wife I can't imagine life without, a beautiful almost 2 year old son and another one expected in May 2014.
-[^4]: Vibhu Norby wrote a published great article a few hours after I had gotten home on this fateful day and  it hit me in the gut pretty hard: http://philosophically.com/firing-and-being-fired
-[^5]: Dan Pink in a TED Talk discusses intrinsic motivators within companies around the world: http://www.ted.com/talks/dan_pink_on_motivation.html
-[^6]: http://philosophically.com/firing-and-being-fired
+[^4]: Vibhu Norby wrote a published great article a few hours after I had gotten home on this fateful day and  it hit me in the gut pretty hard: <a href="http://philosophically.com/firing-and-being-fired" target="_blank">http://philosophically.com/firing-and-being-fired</a>.
+[^5]: Dan Pink in a TED Talk discusses intrinsic motivators within companies around the world: <a href="http://www.ted.com/talks/dan_pink_on_motivation.html" target="_blank">http://www.ted.com/talks/dan_pink_on_motivation.html</a>.
+[^6]: <a href="http://philosophically.com/firing-and-being-fired" target="_blank">http://philosophically.com/firing-and-being-fired</a>.
 [^7]: I have such a gracious wife, I have no idea how she's stayed with me for this long, but I am so thankful she has.
 
