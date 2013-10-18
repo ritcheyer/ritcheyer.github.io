@@ -1,6 +1,7 @@
 ---
 layout: default
 title: What I Enjoy
+class: adelle
 ---
 <header class="header">
     <h1 class="title">What I Enjoy</h1>

@@ -3,6 +3,7 @@ layout: post
 title:  "Lessons in Humility"
 date:   2013-09-26 23:34:00
 categories: personal
+class: adelle
 ---
 I've been thinking about starting journaling again. It comes as a bit of a surprise that my first entry back into this would be this&hellip;humbling.
 
