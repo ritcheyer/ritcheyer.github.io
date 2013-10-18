@@ -189,14 +189,6 @@ blockquote {
 
   @include simple-transition(opacity);
 
-  .home & {
-    padding: 0;
-    border-top: 5px solid #8085C1;
-    background-image: none;
-    border-bottom: 0;
-    box-shadow: 0 0 0 transparent;
-  }
-
   a {
     text-shadow: 0 1px #fff;
     color: #585858;

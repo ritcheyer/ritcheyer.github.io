@@ -251,24 +251,16 @@ blockquote.quote {
   transition: opacity 0.15s ease-in-out 0;
 }
 /* line 192, ../scss/main.scss */
-.home .site-nav {
-  padding: 0;
-  border-top: 5px solid #8085C1;
-  background-image: none;
-  border-bottom: 0;
-  box-shadow: 0 0 0 transparent;
-}
-/* line 200, ../scss/main.scss */
 .site-nav a {
   text-shadow: 0 1px #fff;
   color: #585858;
   font-weight: normal;
 }
-/* line 204, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .site-nav a:hover {
   color: #3f3f3f;
 }
-/* line 206, ../scss/main.scss */
+/* line 198, ../scss/main.scss */
 .site-nav a:hover [class*="icon-"] {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -277,7 +269,7 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 212, ../scss/main.scss */
+/* line 204, ../scss/main.scss */
 .site-nav a [class*="icon-"] {
   opacity: .5;
   position: relative;
@@ -289,7 +281,7 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 221, ../scss/main.scss */
+/* line 213, ../scss/main.scss */
 .site-nav:hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -299,7 +291,7 @@ blockquote.quote {
   transition: opacity 0.15s ease-in-out 0;
 }
 
-/* line 228, ../scss/main.scss */
+/* line 220, ../scss/main.scss */
 .me-everywhere {
   margin: 0 1rem 0 0;
   padding: 0;
@@ -307,57 +299,57 @@ blockquote.quote {
   float: right;
   display: inline;
 }
-/* line 234, ../scss/main.scss */
+/* line 226, ../scss/main.scss */
 .me-everywhere li {
   display: inline-block;
   margin: 0 .25rem;
   padding: 0;
 }
 
-/* line 241, ../scss/main.scss */
+/* line 233, ../scss/main.scss */
 .footnotes {
   color: #444;
   font-size: .8rem;
 }
-/* line 244, ../scss/main.scss */
+/* line 236, ../scss/main.scss */
 .footnotes hr {
   height: 0;
   border: 0;
   border-top: 1px solid #999;
   box-shadow: 0 -1px 0 #fff;
 }
-/* line 250, ../scss/main.scss */
+/* line 242, ../scss/main.scss */
 .footnotes p {
   display: inline;
   margin-bottom: .25rem;
 }
-/* line 254, ../scss/main.scss */
+/* line 246, ../scss/main.scss */
 .footnotes ol {
   margin: 0;
   padding: 1rem 1.5rem;
 }
-/* line 258, ../scss/main.scss */
+/* line 250, ../scss/main.scss */
 .footnotes [rev="footnote"] {
   position: relative;
   top: 2px;
 }
 
-/* line 264, ../scss/main.scss */
+/* line 256, ../scss/main.scss */
 .design-quote {
   margin: 5rem 0;
   text-align: center;
   border: 0;
 }
-/* line 268, ../scss/main.scss */
+/* line 260, ../scss/main.scss */
 .design-quote .quote {
   margin: 0;
 }
-/* line 271, ../scss/main.scss */
+/* line 263, ../scss/main.scss */
 .design-quote .author {
   display: block;
 }
 
-/* line 274, ../scss/main.scss */
+/* line 266, ../scss/main.scss */
 .footer {
   text-transform: lowercase;
   position: fixed;
@@ -378,7 +370,7 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 289, ../scss/main.scss */
+/* line 281, ../scss/main.scss */
 .footer:hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -387,22 +379,22 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 293, ../scss/main.scss */
+/* line 285, ../scss/main.scss */
 .footer .contact {
   margin: 0 auto;
 }
-/* line 356, ../scss/main.scss */
+/* line 348, ../scss/main.scss */
 .footer .rss {
   margin-top: 1.1rem;
   margin-right: -.2rem;
   float: right;
 }
-/* line 360, ../scss/main.scss */
+/* line 352, ../scss/main.scss */
 .footer .rss img {
   border: 0;
 }
 
-/* line 366, ../scss/main.scss */
+/* line 358, ../scss/main.scss */
 .typekit-badge {
   display: none !important;
 }
@@ -411,38 +403,38 @@ blockquote.quote {
 /* Posts
 /*****************************************************************************/
 /* standard */
-/* line 371, ../scss/main.scss */
+/* line 363, ../scss/main.scss */
 .post {
   /* terminal */
 }
-/* line 372, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4rem;
 }
-/* line 376, ../scss/main.scss */
+/* line 368, ../scss/main.scss */
 .post pre code {
   border: none;
 }
-/* line 381, ../scss/main.scss */
+/* line 373, ../scss/main.scss */
 .post ul,
 .post ol {
   margin-left: 1.35rem;
 }
-/* line 384, ../scss/main.scss */
+/* line 376, ../scss/main.scss */
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .2rem;
 }
-/* line 391, ../scss/main.scss */
+/* line 383, ../scss/main.scss */
 .post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
 }
-/* line 395, ../scss/main.scss */
+/* line 387, ../scss/main.scss */
 .post pre.terminal code {
   background-color: #333;
 }
@@ -451,40 +443,40 @@ blockquote.quote {
 /* Media Queries
 /*****************************************************************************/
 @media (max-width: 45rem) {
-  /* line 409, ../scss/main.scss */
+  /* line 401, ../scss/main.scss */
   .site {
     margin: 3rem auto;
   }
 }
 @media (max-width: 550px) {
-  /* line 413, ../scss/main.scss */
+  /* line 405, ../scss/main.scss */
   .site p, .site li {
     font-size: 100%;
   }
 }
 @media (max-width: 400px) {
-  /* line 418, ../scss/main.scss */
+  /* line 410, ../scss/main.scss */
   .site-nav + h2,
   .header .title {
     padding-top: 2rem;
   }
 
-  /* line 419, ../scss/main.scss */
+  /* line 411, ../scss/main.scss */
   h2 {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  /* line 420, ../scss/main.scss */
+  /* line 412, ../scss/main.scss */
   .site {
     margin: 4rem auto 2rem;
   }
-  /* line 422, ../scss/main.scss */
+  /* line 414, ../scss/main.scss */
   .site .meta {
     text-align: center;
   }
 
-  /* line 428, ../scss/main.scss */
+  /* line 420, ../scss/main.scss */
   .site-nav .home-link,
   .site-nav .me-everywhere,
   .site-nav .download-resume {

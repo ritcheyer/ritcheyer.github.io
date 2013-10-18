@@ -54,4 +54,19 @@
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <!-- // <script type="text/javascript" src="/assets/js/site-min.js"></script> -->
         <!-- // <script type="text/javascript" src="//quotesondesign.com/api/3.0/api-3.0.js"></script> -->
- 
+
+        {% if page.css %}
+            <!-- Page specific css -->
+            {% assign css_links = page.css | split:' ' %}
+            {% for css_link in css_links %}
+                <link rel="stylesheet" href="/assets/css/{{page.css}}">
+            {% endfor %}
+        {% endif %}
+
+        {% if page.js %}
+            <!-- Page specific js -->
+            {% assign jss = page.js | split:' ' %}
+            {% for js in jss %}
+                <script type="text/javascript" src="/assets/js/{{js}}"></script>
+            {% endfor %}
+        {% endif %}
