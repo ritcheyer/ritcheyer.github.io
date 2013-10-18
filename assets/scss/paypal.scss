@@ -1,0 +1,75 @@
+$border-radius-value: 2px;
+
+.paypal {
+  width: 400px;
+  margin: auto;
+  border: 1px solid #333;
+  background-color: #ccc;
+  
+  input,
+  textarea {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 0 0 transparent;
+  }
+  .paypal-header,
+  .paypal-footer {
+    background-color: #fff;
+  }
+  .paypal-header {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+  .paypal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #333;
+    overflow: hidden;
+  }
+  .paypal-clear-form,
+  .paypal-submit-form {
+    border: 1px solid #333;
+    text-align: center;
+    min-width: 33%;
+    padding: 1rem;
+  }
+  .paypal-clear-form {
+    float: left;
+  }
+  .paypal-submit-form {
+    float: right;
+  }
+  .paypal-body {
+    padding: 1rem 1.5rem;
+  }
+
+  .input-contain {
+    border: 1px solid #333;
+    border-radius: $border-radius-value;
+  }
+  
+  .payment-type,
+  .payment-choice {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .payment-choice {
+    input { display: none; }
+    padding: .5rem;
+    border: 1px solid #333;
+    &:first-child {
+      border-bottom: 0;
+      border-top-left-radius: $border-radius-value;
+      border-top-right-radius: $border-radius-value;
+    }
+    &:last-child {
+      border-bottom-left-radius: $border-radius-value;
+      border-bottom-right-radius: $border-radius-value;
+    }
+  }
+  
+}

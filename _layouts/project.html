@@ -1,0 +1,16 @@
+{% include header.html %}
+
+    </head>
+    <body class="{{ page.name }}">
+        {% include tracking.html %}
+        
+        <div class="container">
+            <section class="site">
+                {% include site-nav.html %}
+
+                {{ content }}
+            </section>
+        </div>
+
+    </body>
+</html>
