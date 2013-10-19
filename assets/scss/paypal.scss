@@ -1,33 +1,177 @@
-$border-radius-value: 2px;
+/*! ------------------------------------------------------
+
+MUST HAVES:
+Figure A
+------------------------------------------------------
+1. Focusing on an input removes the label and allows text entry.
+
+2. Validation occurs on To and Amount inputs. Entering a correct
+   value shows success while entering an invalid value shows an error.
+
+3. Changing the amount updates the value with the correct currency formatting.
+    Sample data:
+      • $1,234.56 (USD)
+      • €1.234,56 (EUR)
+      • ¥1234.56 (JPY)
+
+https://www.google.com/search?q=javascript+convert+number+to+currency
+http://pastebin.com/RK5cXqQ9
+http://html5pattern.com/Miscs
+
+4. Selecting USD allows the user to modify the currency.
+    Sample data:
+      • USD
+      • EUR
+      • JPY
+
+5. Selecting a value for What's this payment for? highlights the selection.
+
+- 6. Selecting CLEAR returns the form to it's original state.
+
+7. Selecting NEXT moves to Figure B.
+
+
+Figure B
+------------------------------------------------------
+1. Displays a loading icon.
+2. Refreshes to Figure C when available.
+
+Figure C
+------------------------------------------------------
+1. Selecting START OVER returns to Figure A.
+
+NICE TO HAVES:
+ - instead of the inputs getting the outline on focus, give it to the containing element
+ - 
+
+------------------------------------------------------- */
+
+@import "lib/_messaging.scss";
+
+
+
+$border-radius-value: 10px;
+
+
+// -- resetting main.css
+h2 {
+  color: inherit;
+  line-height: inherit;
+  border-bottom: 0;
+  box-shadow: 0 0 0 transparent;
+}
+input,
+textarea {
+  border: 0;
+  margin: 0;
+  padding: .5rem;
+  background: #fff;
+  box-shadow: 0 0 0 transparent;
+
+  font-size: 1rem;
+  
+  // not removing completely because I still want
+  // it to be accessible as much as possible.
+  &:focus { outline: 1px solid #fcc; }
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type=number] {
+  &::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+}
+
+// -- Helpers
+.add-on {
+  padding: 9px 3px;
+  font-size: smaller;
+  position: relative;
+  background-color: #fff;
+  top: -1px;
+
+  .input-append & {
+    margin-right: -5px;
+    border-right: 0;
+  }
+}
+
+.blur-me {
+  -webkit-transition: all .2s; // need to keep around until 7.0
+          transition: all .2s;
+
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
 
 .paypal {
-  width: 400px;
-  margin: auto;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
   border: 1px solid #333;
   background-color: #ccc;
   
-  input,
-  textarea {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    box-shadow: 0 0 0 transparent;
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+    background-color: rgba(0,0,0,.5);
+    z-index: 2;
+    
+    text-align: center;
+    
+    // necessary for vertical centering w/o resorting to dispay: table and such
+    .icon-contain {
+      bottom: 0;
+      height: 61px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+    }
+    
+    [class*="icon-"] {
+      -webkit-transition: all .2s; // need to keep around until 7.0
+              transition: all .2s;
+    }
+    
   }
+
   .paypal-header,
   .paypal-footer {
     background-color: #fff;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
   }
+
   .paypal-header {
+    width: calc(100% - 2rem);
     padding: 1rem;
     text-align: center;
     border-bottom: 1px solid #333;
   }
+
   .paypal-footer {
+    width: calc(100% - 3rem);
+    bottom: 0;
     padding: 1rem 1.5rem;
     border-top: 1px solid #333;
-    overflow: hidden;
   }
+
   .paypal-clear-form,
   .paypal-submit-form {
     border: 1px solid #333;
@@ -35,19 +179,83 @@ $border-radius-value: 2px;
     min-width: 33%;
     padding: 1rem;
   }
+
   .paypal-clear-form {
     float: left;
   }
+
   .paypal-submit-form {
     float: right;
   }
+
   .paypal-body {
     padding: 1rem 1.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(800px - 10.6rem);
+    position: relative;
+    top: 3.3rem;
   }
 
   .input-contain {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    position: relative;
     border: 1px solid #333;
     border-radius: $border-radius-value;
+    background-color: #fff; // commented out for now
+
+    .currency-type {
+      [class*="icon-"] {
+        position: static;
+        top: auto;
+        right: auto;
+      }
+    }
+
+    [class*="icon-"] {
+      position: absolute;
+      top: 1rem;
+      right: .5rem;
+    }
+
+    [for="currency-type"] {
+      position: absolute;
+      top: 1rem;
+      right: .5rem;
+    }
+    
+    [name="send-money-to"] {
+      width: calc(100% - 70px);
+    }
+    
+    [name="amount-to-send"] {
+      width: calc(100% - 160px);
+    }
+    &.message {
+
+      // form textarea
+      [for="payment-message"] {
+        display: none;
+      }
+      [name="payment-message"] {
+        width: calc(100% - 1rem);
+        padding: .5rem .5rem 1rem .5rem;
+        resize: none;   // sorry people who want to resize the textarea.. 
+        overflow: auto; // remove scrollbars in IE (blerrrg that browser...)
+
+        vertical-align: top;
+        -webkit-transition: height 0.15s; // need to keep around until 7.0
+                transition: height 0.15s;
+        
+        &:focus + .msg-counter {
+          opacity: 1;
+          -webkit-transition: all .15s; // need to keep around until 7.0
+                  transition: all .15s;
+        }
+      }
+    }
+
   }
   
   .payment-type,
@@ -57,10 +265,18 @@ $border-radius-value: 2px;
     list-style: none;
   }
   
+  .payment-recipient {
+    margin-top: 3rem;
+    background-color: transparent;
+    border: 0;
+  }
+
   .payment-choice {
     input { display: none; }
     padding: .5rem;
     border: 1px solid #333;
+    background-color: #fff;
+    cursor: pointer;
     &:first-child {
       border-bottom: 0;
       border-top-left-radius: $border-radius-value;

@@ -3,62 +3,82 @@ layout: default
 title: Projects | PayPal UIE Exercise
 date: October 2013
 css: paypal.css
+js: paypal-min.js jquery.autoresize-min.js decrementer-min.js
 --- 
 
+<!--
+TODO:
+ - allow phone or email in "to" field
+ - when user types numbers in "amount" add , and . when appropriate
+    - if user doesn't enter any decimal, add .00
+        if user enters .0, add another 0
+ - selected state for "what's this payment for?"
+-->
 
-<header class="adelle">
+<header class="adelle" style="padding-top: 1rem;">
     <h1>PayPal UIE Exercise</h1>
     <p><strong>Dated:</strong> {{page.date}}</p>
 </header>
-
 <section class="paypal">
     <header class="paypal-header">
         <h1>Send Money</h1>
     </header>
-    <form action="paypal_uie_submit" method="post" accept-charset="utf-8">
+    <form id="submit-payment" class="wait paypal-form" action="/projects/paypal_uie_submit" method="get" accept-charset="utf-8">
         <div class="paypal-body">
-            <div class="input-contain">
+
+            <div class="input-contain send-to">
                 <label for="send-money-to">To:
-                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="uie@paypal.com">
+                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email or Mobile Number" required>
                 </label>
-                <i class="icon-ok-sign msg-success"></i>
-                <i class="icon-warning-sign msg-warning"></i>
+                <i class="icon-ok-sign msg-success hide"></i>
+                <i class="icon-warning-sign msg-warning hide"></i>
             </div>
-            <div class="input-contain">
+
+            <div class="input-contain amount input-append">
                 <label for="amount-to-send">Amount:
-                    <input type="number" name="amount-to-send" value="" id="amount-to-send" placeholder="$1.00" min="0.01" step=".01">
+                    <span class="add-on currency-type"><i class="icon-dollar"></i></span>
+                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" required>
                 </label>
-        
-                <select>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="JPY">JPY</option>
+                <select id="currency-type" class="hide">
+                    <option value="USD" data-toggle="dollar" selected>USD</option>
+                    <option value="EUR" data-toggle="euro">EUR</option>
+                    <option value="JPY" data-toggle="yen">JPY</option>
                 </select>
             </div>
-            <div class="input-contain">
+
+            <div class="input-contain message">
                 <label for="payment-message">Message (optional):</label>
-                <textarea name="payment-message" id="payment-message"></textarea>
+                <textarea name="payment-message" id="payment-message" placeholder="Message (optional):" maxlength="300" data-maxlength="300" data-countdown="true"></textarea>
+                <small class="msg-counter" title="Number of Characters Left">300</small>
                 
             </div>
-        
-        
-            <h2>What's this payment for?</h2>
-            <ul class="payment-type">
-                <li class="payment-choice">
-                    <input type="radio" name="payment-for" value="sending" id="sending-money">
-                    <label for="sending-money">I'm sending money to friends or family</label>
-                </li>
-                <li class="payment-choice">
-                    <input type="radio" name="payment-for" value="paying" id="sending-payment">
-                    <label for="sending-payment">I'm paying for goods or services</label>
-                
-                </li>
-            </ul>
+            
+            <div class="input-contain payment-recipient">
+                <h2>What's this payment for?</h2>
+                <ul class="payment-type">
+                    <li class="payment-choice">
+                        <input type="radio" name="payment-for" value="sending" id="sending-money">
+                        <label for="sending-money">I'm sending money to friends or family</label>
+                    </li>
+                    <li class="payment-choice">
+                        <input type="radio" name="payment-for" value="paying" id="sending-payment">
+                        <label for="sending-payment">I'm paying for goods or services</label>
+                    </li>
+                </ul>
+            </div>
+
+
         </div>
-        
+
         <footer class="paypal-footer">
-            <input type="button" name="clear-form" value="Clear" id="clear-form" class="paypal-clear-form">
+            <input type="reset" name="clear-form" value="Clear" id="clear-form" class="paypal-clear-form">
             <input type="submit" name="submit-payment" value="Next" id="submit-payment" class="paypal-submit-form">
         </footer>
     </form>
+    <div class="overlay hide">
+        <!-- container for vertical centering without resorting to display: table; -->
+        <span class="icon-contain">
+            <i class="icon-spin icon-spinner icon-4x"></i>
+        </span>
+    </div>
 </section>

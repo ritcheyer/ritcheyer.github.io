@@ -1,0 +1,58 @@
+/*
+ * Character Decrementing
+ * Author: Eric Ritchey
+ */
+.msg-counter {
+  min-width: .5rem;
+  padding: .05rem .25rem;
+  position: absolute;
+  bottom: .6rem;
+  right: .6rem;
+
+  opacity: 0;
+
+  font-style: italic;
+  font-size: .7rem;
+  color: #bbb;
+  text-align: center;
+
+  border: 1px solid inherit;
+  border-top-left-radius: 3px;
+
+  -webkit-transition: all .15s; // need to keep around until 7.0
+          transition: all .15s;
+}
+/* -- Green -- */
+.msg-focused {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #468847;
+}
+
+/* -- Blue -- */
+.msg-almost {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #3a87ad;
+}
+/* -- Yellow -- */
+.msg-warn {
+  color: #bf9753;
+  background-color: #fcf8e3;
+  border-color: #c09853;
+}
+
+/* -- Red -- */
+.msg-whoa {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;
+}
+
+/* -- Red -- */
+.msg-ludicrous {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;
+  box-shadow: -1px -1px 4px 0px rgba(160,17,14,1);
+}
