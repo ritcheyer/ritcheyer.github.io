@@ -3,22 +3,18 @@
 MUST HAVES:
 Figure A
 ------------------------------------------------------
-1. Focusing on an input removes the label and allows text entry.
+- 1. Focusing on an input removes the label and allows text entry.
 
 2. Validation occurs on To and Amount inputs. Entering a correct
    value shows success while entering an invalid value shows an error.
 
-3. Changing the amount updates the value with the correct currency formatting.
+- 3. Changing the amount updates the value with the correct currency formatting.
     Sample data:
       • $1,234.56 (USD)
       • €1.234,56 (EUR)
       • ¥1234.56 (JPY)
 
-https://www.google.com/search?q=javascript+convert+number+to+currency
-http://pastebin.com/RK5cXqQ9
-http://html5pattern.com/Miscs
-
-4. Selecting USD allows the user to modify the currency.
+- 4. Selecting USD allows the user to modify the currency.
     Sample data:
       • USD
       • EUR
@@ -28,87 +24,227 @@ http://html5pattern.com/Miscs
 
 - 6. Selecting CLEAR returns the form to it's original state.
 
-7. Selecting NEXT moves to Figure B.
+- 7. Selecting NEXT moves to Figure B.
 
 
 Figure B
 ------------------------------------------------------
-1. Displays a loading icon.
-2. Refreshes to Figure C when available.
+- 1. Displays a loading icon.
+- 2. Refreshes to Figure C when available.
 
 Figure C
 ------------------------------------------------------
-1. Selecting START OVER returns to Figure A.
-
-NICE TO HAVES:
- - instead of the inputs getting the outline on focus, give it to the containing element
- - 
+- 1. Selecting START OVER returns to Figure A.
 
 ------------------------------------------------------- */
 /*
  * Character Decrementing
  * Author: Eric Ritchey
+ * Original: http://jsfiddle.net/ritcheyer/sXc6R/
  */
-/* line 5, ../scss/lib/_messaging.scss */
+/* line 6, ../scss/lib/_messaging.scss */
 .msg-counter {
-  min-width: .5rem;
+  width: 1.4rem;
+  height: 1.2rem;
   padding: .05rem .25rem;
   position: absolute;
-  bottom: .6rem;
-  right: .6rem;
+  bottom: 0;
+  right: 0;
   opacity: 0;
   font-style: italic;
   font-size: .7rem;
   color: #bbb;
   text-align: center;
-  border: 1px solid inherit;
-  border-top-left-radius: 3px;
+  text-shadow: 0 1px 0 #fff;
+  line-height: 1.7;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   -webkit-transition: all .15s;
   transition: all .15s;
 }
 
 /* -- Green -- */
-/* line 26, ../scss/lib/_messaging.scss */
+/* line 33, ../scss/lib/_messaging.scss */
 .msg-focused {
   color: #468847;
-  background-color: #dff0d8;
-  border-color: #468847;
 }
 
 /* -- Blue -- */
-/* line 33, ../scss/lib/_messaging.scss */
+/* line 40, ../scss/lib/_messaging.scss */
 .msg-almost {
   color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #3a87ad;
 }
 
 /* -- Yellow -- */
-/* line 39, ../scss/lib/_messaging.scss */
+/* line 46, ../scss/lib/_messaging.scss */
 .msg-warn {
   color: #bf9753;
-  background-color: #fcf8e3;
-  border-color: #c09853;
-}
-
-/* -- Red -- */
-/* line 46, ../scss/lib/_messaging.scss */
-.msg-whoa {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #b94a48;
 }
 
 /* -- Red -- */
 /* line 53, ../scss/lib/_messaging.scss */
-.msg-ludicrous {
+.msg-whoa {
   color: #b94a48;
-  background-color: #f2dede;
-  border-color: #b94a48;
-  box-shadow: -1px -1px 4px 0px #a0110e;
 }
 
-/* line 57, ../scss/paypal.scss */
+/* -- Red -- */
+/* line 60, ../scss/lib/_messaging.scss */
+.msg-ludicrous {
+  color: #b94a48;
+  font-weight: bold;
+}
+
+/* line 44, ../scss/lib/_buttons.scss */
+.btn-primary {
+  height: 1.4545em;
+  padding: 7px 15px 8px;
+  border: 1px solid;
+  border-color: #0079C1 #00588B #004B77;
+  background-color: #0079C1;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #0079c1), color-stop(20%, #0079c1), color-stop(100%, #00a1ff));
+  background: -webkit-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: -moz-linear-gradient(center bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: -ms-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: -o-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.4545em;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 0 -1px #00692C;
+  -webkit-box-shadow: 0 1px #4DBEFF inset;
+  -moz-box-shadow: 0 1px #4dbeff inset;
+  box-shadow: 0 1px #4DBEFF inset;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #4dbeff inset;
+  -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #4dbeff inset;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #4dbeff inset;
+}
+/* line 38, ../scss/lib/_buttons.scss */
+.btn-primary:active, .btn-primary:focus {
+  outline: none;
+}
+/* line 52, ../scss/lib/_buttons.scss */
+.btn-primary:hover {
+  text-shadow: 0 -1px #004C77;
+  border-color: #00629B #004872 #003B5D;
+  background-color: #005282;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #0079c1), color-stop(20%, #0079c1), color-stop(100%, #00a1ff));
+  background: -webkit-linear-gradient(bottom, #005282 0, #005282 20%, #0083cf 100%);
+  background: -moz-linear-gradient(center bottom, #005282 0, #005282 20%, #0083cf 100%);
+  background: -ms-linear-gradient(bottom, #005282 0, #005282 20%, #0083cf 100%);
+  background: -o-linear-gradient(bottom, #005282 0, #005282 20%, #0083cf 100%);
+  background: linear-gradient(bottom, #005282 0%, #005282 20%, #0083cf 100%);
+  -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #1794dc inset;
+  -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #1794dc inset;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #1794dc inset;
+}
+/* line 67, ../scss/lib/_buttons.scss */
+.btn-primary:active {
+  -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 2px 4px #004268 inset;
+  -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 2px 4px #004268 inset;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 2px 4px #004268 inset;
+  text-shadow: 0 -1px #004268;
+  border-color: #004269 #003D60 #003A5C;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #0079c1), color-stop(20%, #0079c1), color-stop(100%, #00a1ff));
+  background: -webkit-linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+  background: -moz-linear-gradient(center, bottom, #005282 0%, #005282 20%, #006aa8 100%);
+  background: -ms-linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+  background: -o-linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+  background: linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+}
+
+/* line 84, ../scss/lib/_buttons.scss */
+.btn-secondary {
+  height: 1.4545em;
+  padding: 7px 15px 8px;
+  border: 1px solid;
+  border-color: #0079C1 #00588B #004B77;
+  background-color: #0079C1;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #0079c1), color-stop(20%, #0079c1), color-stop(100%, #00a1ff));
+  background: -webkit-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: -moz-linear-gradient(center bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: -ms-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: -o-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background: linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.4545em;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 0 -1px #00692C;
+  -webkit-box-shadow: 0 1px #4DBEFF inset;
+  -moz-box-shadow: 0 1px #4dbeff inset;
+  box-shadow: 0 1px #4DBEFF inset;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  color: #333;
+  text-shadow: 0 1px #E0E0E0;
+  border-color: #565656 #4D4D4D #3E3E3E;
+  background-color: #B3B7BA;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #bfbfbf), color-stop(20%, #bfbfbf), color-stop(100%, #e0e0e0));
+  background: -webkit-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background: -moz-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background: -ms-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background: -o-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background: linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  -webkit-box-shadow: 0 1px #ECECEC inset;
+  -moz-box-shadow: 0 1px #ececec inset;
+  box-shadow: 0 1px #ECECEC inset;
+}
+/* line 38, ../scss/lib/_buttons.scss */
+.btn-secondary:active, .btn-secondary:focus {
+  outline: none;
+}
+/* line 103, ../scss/lib/_buttons.scss */
+.btn-secondary:hover {
+  border-color: #565656 #4D4D4D #3E3E3E;
+  background-color: #A5A5A5;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #a5a5a5), color-stop(20%, #a5a5a5), color-stop(100%, #e0e0e0));
+  background: -webkit-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+  background: -moz-linear-gradient(center bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+  background: -ms-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+  background: -o-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+  background: linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+  -webkit-box-shadow: 0 1px #EBE9EC inset;
+  -moz-box-shadow: 0 1px #ebe9ec inset;
+  box-shadow: 0 1px #EBE9EC inset;
+}
+/* line 117, ../scss/lib/_buttons.scss */
+.btn-secondary:active {
+  border-color: #565656 #4D4D4D #3E3E3E;
+  background-color: #A5A5A5;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #a5a5a5), color-stop(20%, #a5a5a5), color-stop(100%, #cccccc));
+  background: -webkit-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+  background: -moz-linear-gradient(center bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+  background: -ms-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+  background: -o-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+  background: linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+  -webkit-box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* line 135, ../scss/lib/_buttons.scss */
+.btn-link {
+  background: transparent;
+  color: #0079C1;
+}
+
+/* line 50, ../scss/paypal.scss */
 h2 {
   color: inherit;
   line-height: inherit;
@@ -116,65 +252,78 @@ h2 {
   box-shadow: 0 0 0 transparent;
 }
 
-/* line 64, ../scss/paypal.scss */
+/* line 57, ../scss/paypal.scss */
 input,
 textarea {
   border: 0;
   margin: 0;
   padding: .5rem;
-  background: #fff;
+  background: #f5f5f5;
   box-shadow: 0 0 0 transparent;
   font-size: 1rem;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-/* line 75, ../scss/paypal.scss */
+/* line 71, ../scss/paypal.scss */
 input:focus,
 textarea:focus {
-  outline: 1px solid #fcc;
+  outline: 0 solid transparent;
 }
 
-/* line 78, ../scss/paypal.scss */
+/* line 77, ../scss/paypal.scss */
 label {
   cursor: pointer;
 }
 
-/* line 84, ../scss/paypal.scss */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number] ::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* line 91, ../scss/paypal.scss */
+/* line 80, ../scss/paypal.scss */
 .add-on {
   padding: 9px 3px;
   font-size: smaller;
   position: relative;
-  background-color: #fff;
+  background-color: #f5f5f5;
   top: -1px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-/* line 98, ../scss/paypal.scss */
+/* line 90, ../scss/paypal.scss */
 .input-append .add-on {
   margin-right: -5px;
   border-right: 0;
 }
 
-/* line 104, ../scss/paypal.scss */
+/* line 96, ../scss/paypal.scss */
 .blur-me {
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
   -webkit-filter: blur(5px);
   filter: blur(5px);
 }
 
-/* line 112, ../scss/paypal.scss */
+/* line 104, ../scss/paypal.scss */
 .paypal {
   height: 800px;
   position: relative;
   overflow: hidden;
   border: 1px solid #333;
-  background-color: #ccc;
+  background: whitesmoke url("/assets/img/paypal-bg.jpg") repeat top left;
+  text-shadow: 0 1px 0 #fff;
+  color: #3f3f3f;
 }
-/* line 119, ../scss/paypal.scss */
+/* line 112, ../scss/paypal.scss */
+.paypal h1, .paypal h2, .paypal h3, .paypal h4, .paypal h5, .paypal h6 {
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: lighter;
+}
+/* line 117, ../scss/paypal.scss */
+.paypal a {
+  font-weight: bold;
+  color: #0079C1;
+}
+/* line 120, ../scss/paypal.scss */
+.paypal a.btn-primary {
+  color: #fff;
+}
+/* line 125, ../scss/paypal.scss */
 .paypal .overlay {
   width: 100%;
   height: 100%;
@@ -188,7 +337,7 @@ input[type=number] ::-webkit-outer-spin-button {
   z-index: 2;
   text-align: center;
 }
-/* line 135, ../scss/paypal.scss */
+/* line 141, ../scss/paypal.scss */
 .paypal .overlay .icon-contain {
   bottom: 0;
   height: 61px;
@@ -199,50 +348,60 @@ input[type=number] ::-webkit-outer-spin-button {
   right: 0;
   width: 60px;
 }
-/* line 146, ../scss/paypal.scss */
+/* line 152, ../scss/paypal.scss */
 .paypal .overlay [class*="icon-"] {
   -webkit-transition: all .2s;
   transition: all .2s;
 }
-/* line 154, ../scss/paypal.scss */
+/* line 160, ../scss/paypal.scss */
 .paypal .paypal-header,
 .paypal .paypal-footer {
-  background-color: #fff;
+  background: url(https://www.paypalobjects.com/webstatic/i/sparta/scr/scr_gray-bkgd.png) repeat #6e6d71;
   position: absolute;
   overflow: hidden;
   z-index: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #555;
 }
-/* line 161, ../scss/paypal.scss */
+/* line 172, ../scss/paypal.scss */
 .paypal .paypal-header {
   width: calc(100% - 2rem);
   padding: 1rem;
   text-align: center;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #5A595D;
+  -webkit-box-shadow: inset 0 -5px 5px #5A595D;
+  -moz-box-shadow: inset 0 -5px 5px #5a595d;
+  box-shadow: inset 0 -5px 5px #5A595D;
 }
-/* line 168, ../scss/paypal.scss */
+/* line 183, ../scss/paypal.scss */
 .paypal .paypal-footer {
   width: calc(100% - 3rem);
   bottom: 0;
   padding: 1rem 1.5rem;
-  border-top: 1px solid #333;
+  border-top: 1px solid #5A595D;
+  -webkit-box-shadow: inset 0 5px 5px #5A595D;
+  -moz-box-shadow: inset 0 5px 5px #5a595d;
+  box-shadow: inset 0 5px 5px #5A595D;
 }
-/* line 176, ../scss/paypal.scss */
-.paypal .paypal-clear-form,
-.paypal .paypal-submit-form {
-  border: 1px solid #333;
-  text-align: center;
-  min-width: 33%;
-  padding: 1rem;
-}
-/* line 183, ../scss/paypal.scss */
-.paypal .paypal-clear-form {
-  float: left;
-}
-/* line 187, ../scss/paypal.scss */
-.paypal .paypal-submit-form {
+/* line 193, ../scss/paypal.scss */
+.paypal .paypal-footer .btn-primary {
+  width: calc(100% - 8.5rem);
+  padding: 3% 15px;
   float: right;
 }
-/* line 191, ../scss/paypal.scss */
+/* line 197, ../scss/paypal.scss */
+.paypal-submit .paypal .paypal-footer .btn-primary {
+  width: calc(100% - 2rem);
+  float: none;
+  display: block;
+}
+/* line 203, ../scss/paypal.scss */
+.paypal .paypal-footer .btn-secondary {
+  float: left;
+  width: 3rem;
+  padding: 3% 15px;
+}
+/* line 210, ../scss/paypal.scss */
 .paypal .paypal-body {
   padding: 1rem 1.5rem;
   overflow-y: auto;
@@ -251,93 +410,144 @@ input[type=number] ::-webkit-outer-spin-button {
   position: relative;
   top: 3.3rem;
 }
-/* line 200, ../scss/paypal.scss */
+/* line 217, ../scss/paypal.scss */
+.paypal-submit .paypal .paypal-body {
+  text-align: center;
+  padding-top: 5rem;
+  font-size: 120%;
+}
+/* line 222, ../scss/paypal.scss */
+.paypal-submit .paypal .paypal-body .payment-message {
+  display: block;
+  padding: .5rem;
+  border: 1px solid #919191;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  text-align: left;
+}
+/* line 233, ../scss/paypal.scss */
 .paypal .input-contain {
   margin-bottom: 1rem;
   padding: .5rem;
   position: relative;
-  border: 1px solid #333;
+  border: 1px solid #919191;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 0 3px #AFAFAF;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-/* line 209, ../scss/paypal.scss */
+/* line 246, ../scss/paypal.scss */
 .paypal .input-contain .currency-type [class*="icon-"] {
   position: static;
   top: auto;
   right: auto;
 }
-/* line 216, ../scss/paypal.scss */
+/* line 253, ../scss/paypal.scss */
 .paypal .input-contain [class*="icon-"] {
   position: absolute;
   top: 1rem;
   right: .5rem;
 }
-/* line 222, ../scss/paypal.scss */
-.paypal .input-contain [for="currency-type"] {
-  position: absolute;
-  top: 1rem;
-  right: .5rem;
+/* line 259, ../scss/paypal.scss */
+.paypal .input-contain #currency-type {
+  position: relative;
+  top: -2px;
 }
-/* line 228, ../scss/paypal.scss */
+/* line 264, ../scss/paypal.scss */
 .paypal .input-contain [name="send-money-to"] {
   width: calc(100% - 70px);
 }
-/* line 232, ../scss/paypal.scss */
+/* line 268, ../scss/paypal.scss */
 .paypal .input-contain [name="amount-to-send"] {
   width: calc(100% - 160px);
+  padding-left: 0;
 }
-/* line 238, ../scss/paypal.scss */
+/* line 276, ../scss/paypal.scss */
 .paypal .input-contain.message [for="payment-message"] {
   display: none;
 }
-/* line 241, ../scss/paypal.scss */
+/* line 279, ../scss/paypal.scss */
 .paypal .input-contain.message [name="payment-message"] {
   width: calc(100% - 1rem);
   padding: .5rem .5rem 1rem .5rem;
   resize: none;
   overflow: auto;
   vertical-align: top;
-  -webkit-transition: height 0.15s;
-  transition: height 0.15s;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-/* line 251, ../scss/paypal.scss */
+/* line 289, ../scss/paypal.scss */
 .paypal .input-contain.message [name="payment-message"]:focus + .msg-counter {
   opacity: 1;
-  -webkit-transition: all .15s;
-  transition: all .15s;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
-/* line 262, ../scss/paypal.scss */
+/* line 296, ../scss/paypal.scss */
+.paypal .input-contain.active {
+  border: 1px solid #57A9D9;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 5px rgba(58, 144, 194, 0.6), 0 2px 2px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 5px rgba(58, 144, 194, 0.6), 0 2px 2px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 5px rgba(58, 144, 194, 0.6), 0 2px 2px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+/* line 309, ../scss/paypal.scss */
+.paypal .input-contain.active input,
+.paypal .input-contain.active textarea,
+.paypal .input-contain.active .add-on {
+  background-color: #fff;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+/* line 319, ../scss/paypal.scss */
 .paypal .payment-type,
 .paypal .payment-choice {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 268, ../scss/paypal.scss */
+/* line 325, ../scss/paypal.scss */
 .paypal .payment-recipient {
   margin-top: 3rem;
   background-color: transparent;
   border: 0;
+  box-shadow: 0 0 0 transparent;
 }
-/* line 274, ../scss/paypal.scss */
+/* line 333, ../scss/paypal.scss */
 .paypal .payment-choice {
   padding: .5rem;
-  border: 1px solid #333;
-  background-color: #fff;
+  border: 1px solid #919191;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 0 2px #afafaf;
   cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
-/* line 275, ../scss/paypal.scss */
+/* line 334, ../scss/paypal.scss */
 .paypal .payment-choice input {
   display: none;
 }
-/* line 280, ../scss/paypal.scss */
+/* line 344, ../scss/paypal.scss */
 .paypal .payment-choice:first-child {
   border-bottom: 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-/* line 285, ../scss/paypal.scss */
+/* line 349, ../scss/paypal.scss */
 .paypal .payment-choice:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+/* line 353, ../scss/paypal.scss */
+.paypal .payment-choice.selected {
+  color: #fff;
+  text-shadow: 0 1px 0 #555;
+  background: url(https://www.paypalobjects.com/webstatic/i/sparta/scr/scr_gray-bkgd.png) repeat rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 2px 0 16px rgba(0, 0, 0, 0.6) inset;
+  -moz-box-shadow: 2px 0 16px rgba(0, 0, 0, 0.6) inset;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.6) inset;
+  -webkit-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
 }

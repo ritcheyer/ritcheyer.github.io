@@ -9,10 +9,9 @@ js: paypal-min.js jquery.autoresize-min.js decrementer-min.js
 <!--
 TODO:
  - allow phone or email in "to" field
- - when user types numbers in "amount" add , and . when appropriate
-    - if user doesn't enter any decimal, add .00
-        if user enters .0, add another 0
- - selected state for "what's this payment for?"
+ - validation on email, amount and payment for
+ - "thanks page"
+ - fix spinner graphic (shadow looks bad)
 -->
 
 <header class="adelle" style="padding-top: 1rem;">
@@ -37,7 +36,7 @@ TODO:
             <div class="input-contain amount input-append">
                 <label for="amount-to-send">Amount:
                     <span class="add-on currency-type"><i class="icon-dollar"></i></span>
-                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" required>
+                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" required autocomplete="off">
                 </label>
                 <select id="currency-type" class="hide">
                     <option value="USD" data-toggle="dollar" selected>USD</option>
@@ -71,8 +70,9 @@ TODO:
         </div>
 
         <footer class="paypal-footer">
-            <input type="reset" name="clear-form" value="Clear" id="clear-form" class="paypal-clear-form">
-            <input type="submit" name="submit-payment" value="Next" id="submit-payment" class="paypal-submit-form">
+            <input type="hidden" name="currency-symbol" value="dollar" id="currency-symbol">
+            <input type="submit" name="submit-payment" value="Submit Payment" id="submit-payment" class="paypal-submit-form btn-primary">
+            <input type="reset" name="clear-form" value="Clear" id="clear-form" class="paypal-clear-form btn-secondary">
         </footer>
     </form>
     <div class="overlay hide">

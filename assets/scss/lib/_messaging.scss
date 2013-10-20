@@ -1,13 +1,15 @@
 /*
  * Character Decrementing
  * Author: Eric Ritchey
+ * Original: http://jsfiddle.net/ritcheyer/sXc6R/
  */
 .msg-counter {
-  min-width: .5rem;
+  width: 1.4rem;
+  height: 1.2rem;
   padding: .05rem .25rem;
   position: absolute;
-  bottom: .6rem;
-  right: .6rem;
+  bottom: 0;
+  right: 0;
 
   opacity: 0;
 
@@ -15,44 +17,50 @@
   font-size: .7rem;
   color: #bbb;
   text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  line-height: 1.7;
 
-  border: 1px solid inherit;
-  border-top-left-radius: 3px;
-
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
   -webkit-transition: all .15s; // need to keep around until 7.0
           transition: all .15s;
 }
 /* -- Green -- */
 .msg-focused {
   color: #468847;
-  background-color: #dff0d8;
-  border-color: #468847;
+//  background-color: #dff0d8;
+//  border-color: #468847;
 }
 
 /* -- Blue -- */
 .msg-almost {
   color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #3a87ad;
+//  background-color: #d9edf7;
+//  border-color: #3a87ad;
 }
 /* -- Yellow -- */
 .msg-warn {
   color: #bf9753;
-  background-color: #fcf8e3;
-  border-color: #c09853;
+//  background-color: #fcf8e3;
+//  border-color: #c09853;
 }
 
 /* -- Red -- */
 .msg-whoa {
   color: #b94a48;
-  background-color: #f2dede;
-  border-color: #b94a48;
+//  background-color: #f2dede;
+//  border-color: #b94a48;
 }
 
 /* -- Red -- */
 .msg-ludicrous {
   color: #b94a48;
-  background-color: #f2dede;
-  border-color: #b94a48;
-  box-shadow: -1px -1px 4px 0px rgba(160,17,14,1);
+  font-weight: bold;
+//  background-color: #f2dede;
+//  border-color: #b94a48;
+//  box-shadow: 0px 0px 5px rgba(160,17,14,1);
 }

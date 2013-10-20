@@ -1,0 +1,138 @@
+
+
+@mixin btn {
+  height: 1.4545em;
+  padding: 7px 15px 8px;
+
+  border: 1px solid;
+  border-color: #0079C1 #00588B #004B77;
+
+  background-color: #0079C1;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #0079C1), color-stop(20%, #0079C1), color-stop(100%, #00A1FF));
+  background: -webkit-linear-gradient(bottom, #0079C1 0%, #0079C1 20%, #00A1FF 100%);
+  background:    -moz-linear-gradient(center bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background:     -ms-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background:      -o-linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+  background:         linear-gradient(bottom, #0079c1 0%, #0079c1 20%, #00a1ff 100%);
+
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.4545em;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 0 -1px #00692C;
+
+  -webkit-box-shadow: 0 1px #4DBEFF inset;
+     -moz-box-shadow: 0 1px #4dbeff inset;
+          box-shadow: 0 1px #4DBEFF inset;
+
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.btn-primary {
+  @include btn;
+  
+  // using paypal's own button styling
+  -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #4DBEFF inset;
+     -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #4dbeff inset;
+          box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #4DBEFF inset;
+
+  &:hover {
+    text-shadow: 0 -1px #004C77;
+    border-color: #00629B #004872 #003B5D;
+    background-color: #005282;
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(0%,#0079C1),color-stop(20%,#0079C1),color-stop(100%,#00A1FF));
+    background: -webkit-linear-gradient(bottom,#005282 0,#005282 20%,#0083CF 100%);
+    background:    -moz-linear-gradient(center bottom,#005282 0,#005282 20%,#0083CF 100%);
+    background:     -ms-linear-gradient(bottom,#005282 0,#005282 20%,#0083CF 100%);
+    background:      -o-linear-gradient(bottom,#005282 0,#005282 20%,#0083CF 100%);
+    background:         linear-gradient(bottom,#005282 0,#005282 20%,#0083CF 100%);
+
+    -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #1794DC inset;
+       -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #1794dc inset;
+            box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 1px #1794DC inset;
+  }
+  &:active {
+    -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 2px 4px #004268 inset;
+       -moz-box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 2px 4px #004268 inset;
+            box-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 2px 4px #004268 inset;
+
+    text-shadow: 0 -1px #004268;
+    border-color: #004269 #003D60 #003A5C;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #0079C1), color-stop(20%, #0079C1), color-stop(100%, #00A1FF));
+    background: -webkit-linear-gradient(bottom, #005282 0%, #005282 20%, #006AA8 100%);
+    background:    -moz-linear-gradient(center, bottom, #005282 0%, #005282 20%, #006aa8 100%);
+    background:     -ms-linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+    background:      -o-linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+    background:         linear-gradient(bottom, #005282 0%, #005282 20%, #006aa8 100%);
+  }
+  
+}
+
+.btn-secondary {
+  @include btn;
+
+  color: #333;
+  text-shadow: 0 1px #E0E0E0;
+
+  border-color: #565656 #4D4D4D #3E3E3E;
+  background-color: #B3B7BA;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #BFBFBF), color-stop(20%, #BFBFBF), color-stop(100%, #E0E0E0));
+  background: -webkit-linear-gradient(bottom, #BFBFBF 0%, #BFBFBF 20%, #E0E0E0 100%);
+  background:    -moz-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background:     -ms-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background:      -o-linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+  background:         linear-gradient(bottom, #bfbfbf 0%, #bfbfbf 20%, #e0e0e0 100%);
+
+  -webkit-box-shadow: 0 1px #ECECEC inset;
+     -moz-box-shadow: 0 1px #ececec inset;
+          box-shadow: 0 1px #ECECEC inset;
+
+  &:hover {
+    border-color: #565656 #4D4D4D #3E3E3E;
+    background-color: #A5A5A5;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #A5A5A5), color-stop(20%, #A5A5A5), color-stop(100%, #E0E0E0));
+    background: -webkit-linear-gradient(bottom, #A5A5A5 0%, #A5A5A5 20%, #E0E0E0 100%);
+    background:    -moz-linear-gradient(center bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+    background:     -ms-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+    background:      -o-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+    background:         linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #e0e0e0 100%);
+
+    -webkit-box-shadow: 0 1px #EBE9EC inset;
+       -moz-box-shadow: 0 1px #ebe9ec inset;
+            box-shadow: 0 1px #EBE9EC inset;
+  }
+  &:active {
+    border-color: #565656 #4D4D4D #3E3E3E;
+
+    background-color: #A5A5A5;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #A5A5A5), color-stop(20%, #A5A5A5), color-stop(100%, #CCC));
+    background: -webkit-linear-gradient(bottom, #A5A5A5 0%, #A5A5A5 20%, #CCC 100%);
+    background: -moz-linear-gradient(center bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+    background: -ms-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+    background: -o-linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+    background: linear-gradient(bottom, #a5a5a5 0%, #a5a5a5 20%, #cccccc 100%);
+
+    -webkit-box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px #737373 inset, 0 1px rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+.btn-link {
+  background: transparent;
+  color: #0079C1;
+}
