@@ -67,10 +67,9 @@ $(document).ready(function(){
     return value;
   }
 
-  // plugging the plugin
-  if(!$('body').hasClass('paypal-submit')) {
-    $('textarea').autosize();
-  }
+
+  // Only fire on the form page, not the 'thanks' page
+  if(!$('body').hasClass('paypal-submit')) { $('textarea').autosize(); }
   
   // payment recipient selection
   $('.paypal').on('click', '.payment-choice', function(e) {
@@ -133,7 +132,7 @@ $(document).ready(function(){
     
     // display overlay
     $('.paypal .overlay').removeClass('hide');
-
+    
     // TODO: randomize the time it takes for timeout
     setTimeout(function() {
       
@@ -144,14 +143,10 @@ $(document).ready(function(){
 
   });
 
-  $('.send-to, .amount, .message').on('focus', 'input, textarea, select', function() {
-    $(this).closest('.input-contain').addClass('active');
+  $('.send-to, .amount, .message').on('focus blur', 'input, textarea, select', function() {
+    $(this).closest('.input-contain').toggleClass('active');
   });
   
-  $('.send-to, .amount, .message').on('blur', 'input, textarea, select', function() {
-    $(this).closest('.input-contain').removeClass('active');
-  });
-
   $('.amount').on('keypress', 'input', function(e) {
     
       var keyCode = window.event ? e.keyCode : e.which;
