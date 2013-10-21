@@ -3,30 +3,28 @@ layout: default
 title: Projects | PayPal UIE Exercise
 date: October 2013
 css: paypal.css
-js: paypal-min.js
-class: paypal-submit
+js: paypal-min.js jquery.autoresize-min.js
+class: paypal-submit 
 --- 
-
-<header class="adelle" style="padding-top: 1rem;">
-    <h1>PayPal UIE Exercise</h1>
-    <p><strong>Dated:</strong> {{page.date}}</p>
-</header>
 <section class="paypal success">
-    <header class="paypal-header">
+    <header class="header">
         <h1>Money Sent!</h1>
     </header>
-    <div class="paypal-body">
+    <div class="body">
         <div class="confirmation-text hide">
             <header>
                 <h2>Yay!</h2>
             </header>
             <p>You have sent <span class="amount-to-send"></span> to <span class="send-money-to"></span>.</p>
-            <p class="personal-message">You provided the following message:
-                <span class="payment-message"></span>
-            </p>
+            <p>You provided the following message:</p>
+            <blockquote class="payment-message"></blockquote>
         </div>
     </div>
-    <div class="paypal-footer">
+    <div class="footer">
         <a href="/projects/paypal_uie/" title="Send more money" class="btn-primary">Start Over</a>
     </div>
 </section>
+<header class="adelle" style="padding-top: 1rem;">
+    <h1>PayPal UIE Exercise</h1>
+    <p><strong>Dated:</strong> {{page.date}}</p>
+</header>

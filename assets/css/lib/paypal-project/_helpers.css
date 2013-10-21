@@ -1,0 +1,23 @@
+/* line 2, ../../../scss/lib/paypal-project/_helpers.scss */
+.add-on {
+  padding: 9px 3px;
+  font-size: smaller;
+  position: relative;
+  background-color: #f5f5f5;
+  top: -1px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+/* line 12, ../../../scss/lib/paypal-project/_helpers.scss */
+.input-append .add-on {
+  margin-right: -5px;
+  border-right: 0;
+}
+
+/* line 18, ../../../scss/lib/paypal-project/_helpers.scss */
+.blur-me {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}

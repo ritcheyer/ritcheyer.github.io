@@ -239,6 +239,7 @@ blockquote.quote {
   width: 100%;
   opacity: .96;
   padding: .25rem .5rem;
+  z-index: 100;
   border-bottom: 1px solid #ccc;
   box-shadow: inset 0 -1px 0 white;
   color: #585858;
@@ -250,17 +251,17 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 192, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 .site-nav a {
   text-shadow: 0 1px #fff;
   color: #585858;
   font-weight: normal;
 }
-/* line 196, ../scss/main.scss */
+/* line 197, ../scss/main.scss */
 .site-nav a:hover {
   color: #3f3f3f;
 }
-/* line 198, ../scss/main.scss */
+/* line 199, ../scss/main.scss */
 .site-nav a:hover [class*="icon-"] {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -269,7 +270,7 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 204, ../scss/main.scss */
+/* line 205, ../scss/main.scss */
 .site-nav a [class*="icon-"] {
   opacity: .5;
   position: relative;
@@ -281,7 +282,7 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 213, ../scss/main.scss */
+/* line 214, ../scss/main.scss */
 .site-nav:hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -291,7 +292,7 @@ blockquote.quote {
   transition: opacity 0.15s ease-in-out 0;
 }
 
-/* line 220, ../scss/main.scss */
+/* line 221, ../scss/main.scss */
 .me-everywhere {
   margin: 0 1rem 0 0;
   padding: 0;
@@ -299,57 +300,57 @@ blockquote.quote {
   float: right;
   display: inline;
 }
-/* line 226, ../scss/main.scss */
+/* line 227, ../scss/main.scss */
 .me-everywhere li {
   display: inline-block;
   margin: 0 .25rem;
   padding: 0;
 }
 
-/* line 233, ../scss/main.scss */
+/* line 234, ../scss/main.scss */
 .footnotes {
   color: #444;
   font-size: .8rem;
 }
-/* line 236, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 .footnotes hr {
   height: 0;
   border: 0;
   border-top: 1px solid #999;
   box-shadow: 0 -1px 0 #fff;
 }
-/* line 242, ../scss/main.scss */
+/* line 243, ../scss/main.scss */
 .footnotes p {
   display: inline;
   margin-bottom: .25rem;
 }
-/* line 246, ../scss/main.scss */
+/* line 247, ../scss/main.scss */
 .footnotes ol {
   margin: 0;
   padding: 1rem 1.5rem;
 }
-/* line 250, ../scss/main.scss */
+/* line 251, ../scss/main.scss */
 .footnotes [rev="footnote"] {
   position: relative;
   top: 2px;
 }
 
-/* line 256, ../scss/main.scss */
+/* line 257, ../scss/main.scss */
 .design-quote {
   margin: 5rem 0;
   text-align: center;
   border: 0;
 }
-/* line 260, ../scss/main.scss */
+/* line 261, ../scss/main.scss */
 .design-quote .quote {
   margin: 0;
 }
-/* line 263, ../scss/main.scss */
+/* line 264, ../scss/main.scss */
 .design-quote .author {
   display: block;
 }
 
-/* line 266, ../scss/main.scss */
+/* line 267, ../scss/main.scss */
 .footer {
   text-transform: lowercase;
   position: fixed;
@@ -370,7 +371,7 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 281, ../scss/main.scss */
+/* line 282, ../scss/main.scss */
 .footer:hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in-out;
@@ -379,22 +380,22 @@ blockquote.quote {
   -o-transition: opacity 0.15s ease-in-out 0;
   transition: opacity 0.15s ease-in-out 0;
 }
-/* line 285, ../scss/main.scss */
+/* line 286, ../scss/main.scss */
 .footer .contact {
   margin: 0 auto;
 }
-/* line 348, ../scss/main.scss */
+/* line 349, ../scss/main.scss */
 .footer .rss {
   margin-top: 1.1rem;
   margin-right: -.2rem;
   float: right;
 }
-/* line 352, ../scss/main.scss */
+/* line 353, ../scss/main.scss */
 .footer .rss img {
   border: 0;
 }
 
-/* line 358, ../scss/main.scss */
+/* line 359, ../scss/main.scss */
 .typekit-badge {
   display: none !important;
 }
@@ -403,38 +404,38 @@ blockquote.quote {
 /* Posts
 /*****************************************************************************/
 /* standard */
-/* line 363, ../scss/main.scss */
+/* line 364, ../scss/main.scss */
 .post {
   /* terminal */
 }
-/* line 364, ../scss/main.scss */
+/* line 365, ../scss/main.scss */
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4rem;
 }
-/* line 368, ../scss/main.scss */
+/* line 369, ../scss/main.scss */
 .post pre code {
   border: none;
 }
-/* line 373, ../scss/main.scss */
+/* line 374, ../scss/main.scss */
 .post ul,
 .post ol {
   margin-left: 1.35rem;
 }
-/* line 376, ../scss/main.scss */
+/* line 377, ../scss/main.scss */
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .2rem;
 }
-/* line 383, ../scss/main.scss */
+/* line 384, ../scss/main.scss */
 .post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
 }
-/* line 387, ../scss/main.scss */
+/* line 388, ../scss/main.scss */
 .post pre.terminal code {
   background-color: #333;
 }
@@ -443,40 +444,40 @@ blockquote.quote {
 /* Media Queries
 /*****************************************************************************/
 @media (max-width: 45rem) {
-  /* line 401, ../scss/main.scss */
+  /* line 402, ../scss/main.scss */
   .site {
     margin: 3rem auto;
   }
 }
 @media (max-width: 550px) {
-  /* line 405, ../scss/main.scss */
+  /* line 406, ../scss/main.scss */
   .site p, .site li {
     font-size: 100%;
   }
 }
 @media (max-width: 400px) {
-  /* line 410, ../scss/main.scss */
+  /* line 411, ../scss/main.scss */
   .site-nav + h2,
   .header .title {
     padding-top: 2rem;
   }
 
-  /* line 411, ../scss/main.scss */
+  /* line 412, ../scss/main.scss */
   h2 {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  /* line 412, ../scss/main.scss */
+  /* line 413, ../scss/main.scss */
   .site {
     margin: 4rem auto 2rem;
   }
-  /* line 414, ../scss/main.scss */
+  /* line 415, ../scss/main.scss */
   .site .meta {
     text-align: center;
   }
 
-  /* line 420, ../scss/main.scss */
+  /* line 421, ../scss/main.scss */
   .site-nav .home-link,
   .site-nav .me-everywhere,
   .site-nav .download-resume {

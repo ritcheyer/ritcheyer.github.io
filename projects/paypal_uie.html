@@ -14,26 +14,22 @@ TODO:
  - fix spinner graphic (shadow looks bad)
  - make to/amount bigger
  - borders lighter/fainter
-
 -->
 
-<header class="adelle" style="padding-top: 1rem;">
-    <h1>PayPal UIE Exercise</h1>
-    <p><strong>Dated:</strong> {{page.date}}</p>
-</header>
 <section class="paypal">
-    <header class="paypal-header">
+    <header class="header">
         <h1>Send Money</h1>
     </header>
     <form id="submit-payment" class="wait paypal-form" action="/projects/paypal_uie_submit" method="get" accept-charset="utf-8">
-        <div class="paypal-body">
+        <div class="body">
 
             <div class="input-contain send-to">
                 <label for="send-money-to">To:
-                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email or Mobile Number" required>
+                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email or Mobile Number">
                 </label>
                 <i class="icon-ok-sign msg-success hide"></i>
-                <i class="icon-warning-sign msg-warning hide"></i>
+                <i class="icon-warning-sign msg-warn hide"></i>
+                <span class="supporting-text">email@example.com</span>
             </div>
 
             <div class="input-contain amount input-append">
@@ -46,6 +42,7 @@ TODO:
                     <option value="EUR" data-toggle="euro">EUR</option>
                     <option value="JPY" data-toggle="yen">JPY</option>
                 </select>
+                <span class="supporting-text">1234.56 or 1,234.56 or 1.234,56; no letters</span>
             </div>
 
             <div class="input-contain message">
@@ -54,17 +51,21 @@ TODO:
                 <small class="msg-counter" title="Number of Characters Left">300</small>
                 
             </div>
-            
+
+            <hr class="separator" />
+
             <div class="input-contain payment-recipient">
                 <h2>What's this payment for?</h2>
                 <ul class="payment-type">
                     <li class="payment-choice">
                         <input type="radio" name="payment-for" value="sending" id="sending-money">
                         <label for="sending-money">I'm sending money to friends or family</label>
+                        <i class="icon-ok msg-success"></i>
                     </li>
                     <li class="payment-choice">
                         <input type="radio" name="payment-for" value="paying" id="sending-payment">
                         <label for="sending-payment">I'm paying for goods or services</label>
+                        <i class="icon-ok msg-success"></i>
                     </li>
                 </ul>
             </div>
@@ -72,7 +73,7 @@ TODO:
 
         </div>
 
-        <footer class="paypal-footer">
+        <footer class="footer">
             <input type="hidden" name="currency-symbol" value="dollar" id="currency-symbol">
             <input type="submit" name="submit-payment" value="Submit Payment" id="submit-payment" class="paypal-submit-form btn-primary">
             <input type="reset" name="clear-form" value="Clear" id="clear-form" class="paypal-clear-form btn-secondary">
@@ -85,3 +86,7 @@ TODO:
         </span>
     </div>
 </section>
+<header class="adelle" style="padding-top: 1rem;">
+    <h1>PayPal UIE Exercise</h1>
+    <p><strong>Dated:</strong> {{page.date}}</p>
+</header>

@@ -1,0 +1,30 @@
+@import "compass/css3";
+
+h2 {
+  color: inherit;
+  line-height: inherit;
+  border-bottom: 0;
+  box-shadow: 0 0 0 transparent;
+}
+input,
+textarea {
+  border: 0;
+  margin: 0;
+  padding: 1%;
+  background: #f5f5f5;
+  box-shadow: 0 0 0 transparent;
+
+  font-size: 100%;
+
+  -webkit-transition: all .2s ease-in-out; // need to keep around until 7.0
+          transition: all .2s ease-in-out;
+
+  // not removing completely because I still want
+  // it to be accessible as much as possible.
+  &:focus { outline: 0 solid transparent; }
+}
+
+
+//input:invalid + label::after{content: " INVALID";color: red;}
+
+label { cursor: pointer; }

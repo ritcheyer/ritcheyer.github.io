@@ -18,7 +18,7 @@ $(document).ready(function(){
   function newCurrencyValue(value, currency) {
     var newValue, characters;
     
-    // make it a newValueing (I don't trust the internets)
+    // make it a string (I don't trust the internets)
     // also normalize by removing commas and periods
     newValue = value.split('.').join('').split(',').join('');
 
@@ -67,9 +67,12 @@ $(document).ready(function(){
     return value;
   }
 
+  function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+    return pattern.test(emailAddress);
+  }
 
-  // Only fire on the form page, not the 'thanks' page
-  if(!$('body').hasClass('paypal-submit')) { $('textarea').autosize(); }
+  $('textarea').autosize();
   
   // payment recipient selection
   $('.paypal').on('click', '.payment-choice', function(e) {
@@ -127,26 +130,104 @@ $(document).ready(function(){
 
     var thisForm = this;
 
-    // add blur classes
-    $('.paypal-header, .paypal-form').addClass('blur-me');
-    
-    // display overlay
-    $('.paypal .overlay').removeClass('hide');
-    
-    // TODO: randomize the time it takes for timeout
-    setTimeout(function() {
+    // if there aren't any form errors, we can proceed
+    if($('.paypal').find('.form-warning').length == 0) {
       
-      // submit the form now that we have performed
-      // some interactions and validated all the inputs
-      thisForm.submit();
-    }, 3500);
+      // add readonly to inputs, select and textarea on form submission
+      $('input, select, textarea').attr('readonly', true);
+      
+      // add blur classes
+      $('.paypal-header, .paypal-form').addClass('blur-me');
+    
+      // display overlay
+      $('.paypal .overlay').removeClass('hide');
+    
+      // TODO: randomize the time it takes for timeout
+      setTimeout(function() {
+      
+        // submit the form now that we have performed
+        // some interactions and validated all the inputs
+        thisForm.submit();
+      }, 3500);
+    }
 
   });
+  
+  // reset the form when 'clear' button clicked
+  $(':reset').on('click', function(){
+    $('.payment-choice').removeClass('selected');
+    $('.input-contain').removeClass('form-warning');
+    $('.icon-ok-sign, .icon-warning-sign').addClass('hide');
+  });
 
+  // validation messaging
+  $('.send-to, .amount').on('blur', 'input', function() {
+    var $this = $(this);
+    
+    // is email?
+    if($this.attr('type') === 'email') {
+      
+      // is not empty?
+      if($this.val() !== '') {
+
+        // did is pass validation?
+        if(!isValidEmailAddress($this.val())) {
+
+          // add warning class to parent container
+          $this.closest('.input-contain').addClass('form-warning');
+
+          // display the warning sign
+          $('.send-to .icon-warning-sign').fadeIn(100, function(){
+            $(this).removeClass('hide').removeAttr('style');
+          });
+          
+          // disable form submission
+          $(':submit').attr('disabled', true).val('Please correct errors first.');
+
+        } else {
+
+          // hide the warning sign since validation passed
+          $('.send-to .icon-warning-sign').addClass('hide');
+
+          // display success icon since validation passed
+          $('.send-to .icon-ok-sign').fadeIn(100, function(){
+            $(this).removeClass('hide').removeAttr('style');
+          });
+
+          // enable form submission
+          $(':submit').attr('disabled', false).val('Submit Payment');
+
+        }
+
+      }
+
+    else if($this.attr('type') === 'tel') {
+      
+    }
+
+    // not email or tel, then text or amount
+    } else {
+      // not sure if i really need to test
+      // this given the work already done?
+    }
+  });
+
+  // toggling classes on input containers
   $('.send-to, .amount, .message').on('focus blur', 'input, textarea, select', function() {
     $(this).closest('.input-contain').toggleClass('active');
   });
   
+
+  // if user types phone number, switch input type
+  // enter dash if necessary
+  $('.send-to').on('keypress', 'input', function(e) {
+    var keyCode = window.event ? e.keyCode : e.which;
+    
+    console.log(keyCode);
+
+  });
+  
+  // only allow numbers and commas in amount field
   $('.amount').on('keypress', 'input', function(e) {
     
       var keyCode = window.event ? e.keyCode : e.which;
@@ -161,6 +242,7 @@ $(document).ready(function(){
 
   });
   
+  // when leaving amount, check if it needs .00 or ,00 then send it to the converter
   $('.amount').on('blur', 'input', function() {
     var $this = $(this),
         value = $this.val(),
@@ -189,7 +271,7 @@ $(document).ready(function(){
 
   });
 
-
+  // logic for the 'thanks' page. some of this unnecessary if this were a production system.
   if($('body').hasClass('paypal-submit')) {
     var query = window.location.search;
     var paramArray = query.split('?');
@@ -212,14 +294,18 @@ $(document).ready(function(){
     else if(paymentValues[4] === 'yen')  { currencyText = 'Yen'; }
 
     $('.amount-to-send').html('<i class="icon-' + paymentValues[4] + '"> ' + amountSent + ' ' + currencyText);
-    $('.payment-message').text(decodeURIComponent(paymentValues[2]));
     
+    paymentMessage = decodeURIComponent(paymentValues[2]).replace(/\+/g, ' ');
+    
+    $('.payment-message').text(paymentMessage);
     setTimeout(function() {
       
       $('.confirmation-text').fadeIn('fast', function(){
         $(this).removeClass('hide').removeAttr('style');
       });
     }, 100);
+    
+    
     
   }
 

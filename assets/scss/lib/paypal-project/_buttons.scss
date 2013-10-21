@@ -41,6 +41,21 @@
 
 }
 
+[class*='btn-']:disabled {
+  color: #fff;
+  background: #ccc;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 0 transparent;
+  text-shadow: 0 0 0 transparent;
+  cursor: default;
+  &:hover {
+    background: #ccc;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 0 transparent;
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
 .btn-primary {
   @include btn;
   
