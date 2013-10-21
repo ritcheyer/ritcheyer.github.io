@@ -271,7 +271,7 @@ $(document).ready(function(){
           });
           
           // disable form submission
-          $(':submit').attr('disabled', true).val('Please correct errors first.');
+          $(':submit').attr('disabled', true).val('Please correct errors.');
           console.log('invalid email');
 
         } else {
