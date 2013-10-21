@@ -92,8 +92,7 @@ $(document).ready(function(){
     $('.payment-type').removeClass('form-warning');
     $('.payment-choice').removeClass('selected');
     $this.addClass('selected');
-    
-    $this.next('input[type="radio"]').attr('checked', true);
+    $this.children('input[type="radio"]').attr('checked', true);
   });
   
   // when focusing on the amount field, we want to do some stuff
