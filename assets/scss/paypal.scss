@@ -157,7 +157,7 @@ Figure C
     padding: 1rem 1.5rem;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(800px - 10.6rem);
+    height: calc(800px - 15.3rem);
     position: relative;
     top: 3.3rem;
     .paypal-submit & {
@@ -326,6 +326,8 @@ Figure C
     }
   }
   
+  .form-warning {}
+  
   .payment-type,
   .payment-choice {
     margin: 0;
@@ -342,6 +344,7 @@ Figure C
     border-radius: 10px;
   }
   .payment-recipient {
+    margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     background-color: transparent;
