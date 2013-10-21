@@ -6,12 +6,6 @@ css: paypal.css
 js: paypal-min.js jquery.autoresize-min.js decrementer-min.js spin-min.js
 --- 
 
-<!--
-TODO:
- - allow phone or email in "to" field
- - brian (in safari) I can get to the thanks page without entering a valid email.
--->
-
 <section class="paypal">
     <header class="header">
         <h1>Send Money</h1>
@@ -21,7 +15,7 @@ TODO:
 
             <div class="input-contain send-to">
                 <label for="send-money-to">To:
-                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email Address" autocomplete="off">
+                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email Address" required autocomplete="off">
                 </label>
                 <i class="icon-ok msg-success hide"></i>
                 <i class="icon-warning-sign msg-warn hide"></i>
@@ -31,7 +25,7 @@ TODO:
             <div class="input-contain amount input-append">
                 <label for="amount-to-send">Amount:
                     <span class="add-on currency-type"><i class="icon-dollar"></i></span>
-                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" autocomplete="off">
+                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" required autocomplete="off">
                 </label>
                 <i class="icon-ok msg-success hide"></i>
                 <i class="icon-warning-sign msg-warn hide"></i>
