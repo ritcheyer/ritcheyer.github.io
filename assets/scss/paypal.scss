@@ -359,6 +359,10 @@ Figure C
     position: relative;
     background-color: transparent;
     cursor: pointer;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, .4);
+    }
 
  
     -webkit-transition: all .2s; // need to keep around until 7.0

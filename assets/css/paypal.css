@@ -621,29 +621,33 @@ label {
 .paypal .payment-choice input {
   display: none;
 }
-/* line 367, ../scss/paypal.scss */
+/* line 363, ../scss/paypal.scss */
+.paypal .payment-choice:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+/* line 371, ../scss/paypal.scss */
 .paypal .payment-choice [class*="icon-"] {
   display: none;
   top: 1rem;
   -webkit-transition: display .2s ease-in-out;
   transition: display .2s ease-in-out;
 }
-/* line 376, ../scss/paypal.scss */
+/* line 380, ../scss/paypal.scss */
 .paypal .payment-choice:first-child {
   border-bottom: 1px solid rgba(145, 145, 145, 0.5);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-/* line 381, ../scss/paypal.scss */
+/* line 385, ../scss/paypal.scss */
 .paypal .payment-choice:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-/* line 385, ../scss/paypal.scss */
+/* line 389, ../scss/paypal.scss */
 .paypal .payment-choice.selected {
   background-color: #fff;
 }
-/* line 387, ../scss/paypal.scss */
+/* line 391, ../scss/paypal.scss */
 .paypal .payment-choice.selected [class*="icon-"] {
   display: block;
   -webkit-transition: display .2s ease-in-out;
