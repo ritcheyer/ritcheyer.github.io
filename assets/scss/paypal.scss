@@ -96,6 +96,7 @@ Figure C
     }
     
     [class*="icon-"] {
+      text-shadow: 0 0 0 transparent;
       -webkit-transition: all .2s; // need to keep around until 7.0
               transition: all .2s;
     }
@@ -116,7 +117,8 @@ Figure C
   }
 
   .header {
-    width: calc(100% - 2rem);
+    width: -webkit-calc(100% - 2rem);
+    width:         calc(100% - 2rem);
     padding: 1rem;
     text-align: center;
     border-bottom: 1px solid #5A595D;
@@ -127,7 +129,8 @@ Figure C
   }
 
   .footer {
-    width: calc(100% - 3rem);
+    width: -webkit-calc(100% - 3rem);
+    width:         calc(100% - 3rem);
     bottom: 0;
     padding: 1rem 1.5rem;
     border-top: 1px solid #5A595D;
@@ -137,11 +140,13 @@ Figure C
             box-shadow: inset 0 5px 5px #5A595D;
 
     .btn-primary {
-      width: calc(100% - 8.5rem);
+      width: -webkit-calc(100% - 8.5rem);
+      width:         calc(100% - 8.5rem);
       padding: 3% 15px;
       float: right;
       .paypal-submit & {
-        width: calc(100% - 2rem);
+        width: -webkit-calc(100% - 2rem);
+        width:         calc(100% - 2rem);
         float: none;
         display: block;
       }
@@ -157,20 +162,23 @@ Figure C
     padding: 1rem 1.5rem;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(800px - 15.3rem);
+    height: -webkit-calc(800px - 15.3rem);
+    height:         calc(800px - 15.3rem);
     position: relative;
     top: 3.3rem;
     .paypal-submit & {
       text-align: center;
       padding-top: 5rem;
       font-size: 120%;
-      height: calc(800px - 19.3rem);
+      height: -webkit-calc(800px - 19.3rem);
+      height:         calc(800px - 19.3rem);
       
       
       .payment-message {
         border: 0;
         position: relative;
-        width: calc(100% - 6rem);
+        width: -webkit-calc(100% - 6rem);
+        width:         calc(100% - 6rem);
         display: block;
         padding: .5rem 2rem;
         margin: 0 auto;
@@ -257,11 +265,13 @@ Figure C
     }
     
     [name="send-money-to"] {
-      width: calc(100% - 70px);
+      width: -webkit-calc(100% - 70px);
+      width:         calc(100% - 70px);
     }
     
     [name="amount-to-send"] {
-      width: calc(100% - 160px);
+      width: -webkit-calc(100% - 160px);
+      width:         calc(100% - 160px);
       padding-left: 0;
     }
 
@@ -300,7 +310,8 @@ Figure C
       display: none;
     }
     [name="payment-message"] {
-      width: calc(100% - 1rem);
+      width: -webkit-calc(100% - 1rem);
+      width:         calc(100% - 1rem);
       min-height: 6rem;
       resize: none;   // sorry people who want to resize the textarea.. 
       overflow: auto; // remove scrollbars in IE (blerrrg that browser...)

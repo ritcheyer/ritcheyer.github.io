@@ -266,6 +266,8 @@ $(document).ready(function(){
 
     if(value !== '') {
       value = newCurrencyValue(value, currencyType);
+    } else {
+      $this.closest('.input-contain').addClass('form-warning');
     }
     $this.val(value);
 
