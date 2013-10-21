@@ -330,6 +330,7 @@ label {
 /* line 48, ../scss/paypal.scss */
 .paypal {
   height: 740px;
+  min-width: 400px;
   margin-top: 1rem;
   position: relative;
   overflow: hidden;
@@ -339,21 +340,21 @@ label {
   text-shadow: 0 1px 0 #fff;
   color: #3f3f3f;
 }
-/* line 58, ../scss/paypal.scss */
+/* line 59, ../scss/paypal.scss */
 .paypal h1, .paypal h2, .paypal h3, .paypal h4, .paypal h5, .paypal h6 {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: lighter;
 }
-/* line 63, ../scss/paypal.scss */
+/* line 64, ../scss/paypal.scss */
 .paypal a {
   font-weight: bold;
   color: #0079C1;
 }
-/* line 66, ../scss/paypal.scss */
+/* line 67, ../scss/paypal.scss */
 .paypal a.btn-primary {
   color: #fff;
 }
-/* line 70, ../scss/paypal.scss */
+/* line 71, ../scss/paypal.scss */
 .paypal .overlay {
   width: 100%;
   height: 100%;
@@ -367,7 +368,7 @@ label {
   z-index: 2;
   text-align: center;
 }
-/* line 86, ../scss/paypal.scss */
+/* line 87, ../scss/paypal.scss */
 .paypal .overlay #spinner {
   margin: 0;
   padding: 0;
@@ -376,7 +377,7 @@ label {
   top: 30%;
   left: 50%;
 }
-/* line 98, ../scss/paypal.scss */
+/* line 99, ../scss/paypal.scss */
 .paypal .header,
 .paypal .footer {
   background: url(https://www.paypalobjects.com/webstatic/i/sparta/scr/scr_gray-bkgd.png) repeat #6e6d71;
@@ -386,7 +387,7 @@ label {
   color: #fff;
   text-shadow: 0 1px 0 #555;
 }
-/* line 110, ../scss/paypal.scss */
+/* line 111, ../scss/paypal.scss */
 .paypal .header {
   width: -webkit-calc(100% - 2rem);
   width: calc(100% - 2rem);
@@ -397,7 +398,7 @@ label {
   -moz-box-shadow: inset 0 -5px 5px #5a595d;
   box-shadow: inset 0 -5px 5px #5A595D;
 }
-/* line 122, ../scss/paypal.scss */
+/* line 123, ../scss/paypal.scss */
 .paypal .footer {
   width: -webkit-calc(100% - 3rem);
   width: calc(100% - 3rem);
@@ -408,7 +409,7 @@ label {
   -moz-box-shadow: inset 0 5px 5px #5a595d;
   box-shadow: inset 0 5px 5px #5A595D;
 }
-/* line 134, ../scss/paypal.scss */
+/* line 135, ../scss/paypal.scss */
 .paypal .footer .btn-primary {
   width: -webkit-calc(100% - 8.5rem);
   width: calc(100% - 8.5rem);
@@ -416,20 +417,20 @@ label {
   float: right;
   text-transform: lowercase;
 }
-/* line 142, ../scss/paypal.scss */
+/* line 143, ../scss/paypal.scss */
 .paypal-submit .paypal .footer .btn-primary {
   width: -webkit-calc(100% - 2rem);
   width: calc(100% - 2rem);
   float: none;
   display: block;
 }
-/* line 149, ../scss/paypal.scss */
+/* line 150, ../scss/paypal.scss */
 .paypal .footer .btn-secondary {
   float: left;
   width: 3rem;
   padding: 3% 15px;
 }
-/* line 156, ../scss/paypal.scss */
+/* line 157, ../scss/paypal.scss */
 .paypal .body {
   padding: 1rem 1.5rem;
   overflow-y: auto;
@@ -439,7 +440,7 @@ label {
   position: relative;
   top: 3.3rem;
 }
-/* line 164, ../scss/paypal.scss */
+/* line 165, ../scss/paypal.scss */
 .paypal-submit .paypal .body {
   text-align: center;
   padding-top: 5rem;
@@ -447,13 +448,13 @@ label {
   height: -webkit-calc(800px - 19.3rem);
   height: calc(800px - 19.3rem);
 }
-/* line 171, ../scss/paypal.scss */
+/* line 172, ../scss/paypal.scss */
 .paypal-submit .paypal .body [class*="icon-"] {
   font-size: 1.1rem;
   position: relative;
   top: -1px;
 }
-/* line 177, ../scss/paypal.scss */
+/* line 178, ../scss/paypal.scss */
 .paypal-submit .paypal .body .payment-message blockquote {
   border: 0;
   position: relative;
@@ -472,7 +473,7 @@ label {
   white-space: -pre-wrap;
   white-space: pre-wrap;
 }
-/* line 198, ../scss/paypal.scss */
+/* line 199, ../scss/paypal.scss */
 .paypal-submit .paypal .body .payment-message blockquote:before, .paypal-submit .paypal .body .payment-message blockquote:after {
   position: relative;
   font-size: 7rem;
@@ -482,15 +483,15 @@ label {
   opacity: .7;
   top: 3.7rem;
 }
-/* line 207, ../scss/paypal.scss */
+/* line 208, ../scss/paypal.scss */
 .paypal-submit .paypal .body .payment-message blockquote:before {
   content: open-quote;
 }
-/* line 208, ../scss/paypal.scss */
+/* line 209, ../scss/paypal.scss */
 .paypal-submit .paypal .body .payment-message blockquote:after {
   content: close-quote;
 }
-/* line 213, ../scss/paypal.scss */
+/* line 214, ../scss/paypal.scss */
 .paypal .input-contain {
   width: -webkit-calc(100% - 4rem);
   width: calc(100% - 4rem);
@@ -504,13 +505,13 @@ label {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
-/* line 228, ../scss/paypal.scss */
+/* line 229, ../scss/paypal.scss */
 .paypal .input-contain .currency-type [class*="icon-"] {
   position: static;
   top: auto;
   right: auto;
 }
-/* line 235, ../scss/paypal.scss */
+/* line 236, ../scss/paypal.scss */
 .paypal .input-contain [class*="icon-"] {
   position: absolute;
   top: 1rem;
@@ -518,17 +519,17 @@ label {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
-/* line 239, ../scss/paypal.scss */
+/* line 240, ../scss/paypal.scss */
 .paypal .input-contain [class*="icon-"].hide {
   display: block;
   opacity: 0;
 }
-/* line 251, ../scss/paypal.scss */
+/* line 252, ../scss/paypal.scss */
 .paypal .input-contain .icon-ok,
 .paypal .input-contain .icon-warning-sign {
   font-size: 1.5rem;
 }
-/* line 252, ../scss/paypal.scss */
+/* line 253, ../scss/paypal.scss */
 .paypal .input-contain .supporting-text {
   font-size: small;
   position: absolute;
@@ -540,24 +541,24 @@ label {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
-/* line 265, ../scss/paypal.scss */
+/* line 266, ../scss/paypal.scss */
 .paypal .input-contain #currency-type {
   position: relative;
   top: -1px;
   right: 0rem;
 }
-/* line 271, ../scss/paypal.scss */
+/* line 272, ../scss/paypal.scss */
 .paypal .input-contain [name="send-money-to"] {
   width: -webkit-calc(100% - 70px);
   width: calc(100% - 70px);
 }
-/* line 276, ../scss/paypal.scss */
+/* line 277, ../scss/paypal.scss */
 .paypal .input-contain [name="amount-to-send"] {
   width: -webkit-calc(100% - 150px);
   width: calc(100% - 150px);
   padding-left: 0;
 }
-/* line 282, ../scss/paypal.scss */
+/* line 283, ../scss/paypal.scss */
 .paypal .input-contain.active {
   border: 1px solid #57A9D9;
   background-color: #fff;
@@ -567,7 +568,7 @@ label {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
-/* line 295, ../scss/paypal.scss */
+/* line 296, ../scss/paypal.scss */
 .paypal .input-contain.active input,
 .paypal .input-contain.active textarea,
 .paypal .input-contain.active .add-on {
@@ -575,33 +576,33 @@ label {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
-/* line 301, ../scss/paypal.scss */
+/* line 302, ../scss/paypal.scss */
 .paypal .input-contain.active .supporting-text {
   opacity: 1;
   -webkit-transition: opactiy .2s ease-in-out;
   transition: opactiy .2s ease-in-out;
 }
-/* line 308, ../scss/paypal.scss */
+/* line 309, ../scss/paypal.scss */
 .paypal .input-contain.form-warning {
   border: 1px solid #bf9753;
   box-shadow: inset 0 0 3px #bf9753;
 }
-/* line 312, ../scss/paypal.scss */
+/* line 313, ../scss/paypal.scss */
 .paypal .input-contain.form-warning .icon-warning-sign {
   opacity: 1;
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
-/* line 323, ../scss/paypal.scss */
+/* line 324, ../scss/paypal.scss */
 .paypal .amount .icon-ok,
 .paypal .amount .icon-warning-sign {
   right: -2rem;
 }
-/* line 331, ../scss/paypal.scss */
+/* line 332, ../scss/paypal.scss */
 .paypal .message [for="payment-message"] {
   display: none;
 }
-/* line 334, ../scss/paypal.scss */
+/* line 335, ../scss/paypal.scss */
 .paypal .message [name="payment-message"] {
   width: -webkit-calc(100% - 1rem);
   width: calc(100% - 1rem);
@@ -612,24 +613,24 @@ label {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
-/* line 345, ../scss/paypal.scss */
+/* line 346, ../scss/paypal.scss */
 .paypal .message [name="payment-message"]:focus + .msg-counter {
   opacity: 1;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
-/* line 352, ../scss/paypal.scss */
+/* line 353, ../scss/paypal.scss */
 .paypal .message + .separator {
   margin-bottom: 0;
 }
-/* line 358, ../scss/paypal.scss */
+/* line 359, ../scss/paypal.scss */
 .paypal .payment-type,
 .paypal .payment-choice {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 364, ../scss/paypal.scss */
+/* line 365, ../scss/paypal.scss */
 .paypal .payment-type {
   border-radius: 10px;
   border: 1px solid rgba(145, 145, 145, 0.5);
@@ -637,12 +638,12 @@ label {
   background-color: whitesmoke;
   border-radius: 10px;
 }
-/* line 371, ../scss/paypal.scss */
+/* line 372, ../scss/paypal.scss */
 .paypal .payment-type.form-warning {
   border: 1px solid #bf9753;
   box-shadow: inset 0 0 3px #bf9753;
 }
-/* line 377, ../scss/paypal.scss */
+/* line 378, ../scss/paypal.scss */
 .paypal .payment-recipient {
   width: -webkit-calc(100% - 2rem);
   width: calc(100% - 2rem);
@@ -653,7 +654,7 @@ label {
   border: 0;
   box-shadow: 0 0 0 transparent;
 }
-/* line 389, ../scss/paypal.scss */
+/* line 390, ../scss/paypal.scss */
 .paypal .payment-choice {
   padding: 0.75rem 1rem;
   position: relative;
@@ -662,37 +663,37 @@ label {
   -webkit-transition: all .2s;
   transition: all .2s;
 }
-/* line 390, ../scss/paypal.scss */
+/* line 391, ../scss/paypal.scss */
 .paypal .payment-choice input {
   display: none;
 }
-/* line 396, ../scss/paypal.scss */
+/* line 397, ../scss/paypal.scss */
 .paypal .payment-choice:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-/* line 404, ../scss/paypal.scss */
+/* line 405, ../scss/paypal.scss */
 .paypal .payment-choice [class*="icon-"] {
   display: none;
   top: 1rem;
   -webkit-transition: display .2s ease-in-out;
   transition: display .2s ease-in-out;
 }
-/* line 413, ../scss/paypal.scss */
+/* line 414, ../scss/paypal.scss */
 .paypal .payment-choice:first-child {
   border-bottom: 1px solid rgba(145, 145, 145, 0.5);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-/* line 418, ../scss/paypal.scss */
+/* line 419, ../scss/paypal.scss */
 .paypal .payment-choice:last-child {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-/* line 422, ../scss/paypal.scss */
+/* line 423, ../scss/paypal.scss */
 .paypal .payment-choice.selected {
   background-color: #fff;
 }
-/* line 424, ../scss/paypal.scss */
+/* line 425, ../scss/paypal.scss */
 .paypal .payment-choice.selected [class*="icon-"] {
   display: block;
   -webkit-transition: display .2s ease-in-out;
