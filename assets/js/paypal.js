@@ -1,3 +1,8 @@
+/*!
+ * If you're interested in seeing the uncompressed version,
+ * it's here: http://eric.ritchey.io/assets/js/paypal.js
+*/
+
 $(document).ready(function(){
 
   // a function to hide/show an element based on the action on the input

@@ -1,5 +1,7 @@
 /*!
  * @ritcheyer: http://jsfiddle.net/ritcheyer/bYZkS/
+ * If you're interested in seeing the uncompressed version,
+ * it's here: http://eric.ritchey.io/assets/js/decrementer.js
  */
 
 function updateCountdown(input) {
