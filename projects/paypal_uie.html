@@ -9,12 +9,7 @@ js: paypal-min.js jquery.autoresize-min.js decrementer-min.js spin-min.js
 <!--
 TODO:
  - allow phone or email in "to" field
- - validation on email, amount and payment for
- - "thanks page"
- - fix spinner graphic (shadow looks bad)
  - brian (in safari) I can get to the thanks page without entering a valid email.
- - james: "on the thank you page, can you fit the quotation marks around the actual text?"
- - james: "there is an extra space between the $ and the number on the thank you"
 -->
 
 <section class="paypal">
@@ -26,9 +21,9 @@ TODO:
 
             <div class="input-contain send-to">
                 <label for="send-money-to">To:
-                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email or Mobile Number" required autocomplete="off">
+                    <input type="email" name="send-money-to" value="" id="send-money-to" placeholder="Email Address" autocomplete="off">
                 </label>
-                <i class="icon-ok-sign msg-success hide"></i>
+                <i class="icon-ok msg-success hide"></i>
                 <i class="icon-warning-sign msg-warn hide"></i>
                 <span class="supporting-text">email@example.com</span>
             </div>
@@ -36,8 +31,10 @@ TODO:
             <div class="input-contain amount input-append">
                 <label for="amount-to-send">Amount:
                     <span class="add-on currency-type"><i class="icon-dollar"></i></span>
-                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" required autocomplete="off">
+                    <input type="text" name="amount-to-send" value="" id="amount-to-send" placeholder="1,234.56" autocomplete="off">
                 </label>
+                <i class="icon-ok msg-success hide"></i>
+                <i class="icon-warning-sign msg-warn hide"></i>
                 <select id="currency-type" class="hide">
                     <option value="USD" data-toggle="dollar" selected>USD</option>
                     <option value="EUR" data-toggle="euro">EUR</option>
@@ -81,11 +78,44 @@ TODO:
         </footer>
     </form>
     <div class="overlay hide">
-        <!-- container for vertical centering without resorting to display: table; -->
         <div id="spinner"></div>
     </div>
 </section>
 <header class="adelle" style="padding-top: 1rem;">
     <h1>PayPal UIE Exercise</h1>
     <p><strong>Dated:</strong> {{page.date}}</p>
+    <!-- <p>As part of being a candidate for a position at PayPal, this coding exercise was provided. The following criteria was to be met. (<em data-toggle="viewprojdescription">view</em>)</p>
+    <div class="description">
+        <h4>Figure A</h4>
+        <ol>
+            <li>Focusing on an input removes the label and allows text entry.</li>
+            <li>Validation occurs on To and Amount inputs. Entering a correct value shows success while entering an invalid value shows an error.</li>
+            <li>Changing the amount updates the value with the correct currency formatting. Sample data:
+                <ul>
+                    <li>$1,234.56 (USD)</li>
+                    <li>€1.234,56 (EUR)</li>
+                    <li>¥1234.56 (JPY)</li>
+                </ul>
+            </li>
+            <li>Selecting USD allows the user to modify the currency. Sample data:
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>JPY</li>
+                </ul>
+            </li>
+            <li>Selecting a value for What's this payment for? highlights the selection.</li>
+            <li>Selecting CLEAR returns the form to it's original state.</li>
+            <li>Selecting NEXT moves to Figure B.</li>
+        </ol>
+        <h4>Figure B</h4>
+        <ol>
+            <li>Displays a loading icon.</li>
+            <li>Refreshes to Figure C when available.</li>
+        </ol>
+        <h4>Figure C</h4>
+        <ol>
+            <li>Selecting START OVER returns to Figure A.</li>
+        </ol>
+    </div> -->
 </header>

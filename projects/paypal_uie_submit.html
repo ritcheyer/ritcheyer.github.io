@@ -3,7 +3,7 @@ layout: default
 title: Projects | PayPal UIE Exercise
 date: October 2013
 css: paypal.css
-js: paypal-min.js jquery.autoresize-min.js
+js: paypal-min.js
 class: paypal-submit 
 --- 
 <section class="paypal success">
@@ -16,8 +16,11 @@ class: paypal-submit
                 <h2>Yay!</h2>
             </header>
             <p>You have sent <span class="amount-to-send"></span> to <span class="send-money-to"></span>.</p>
-            <p>You provided the following message:</p>
-            <blockquote class="payment-message"></blockquote>
+            <div class="payment-message">
+                <hr class="separator" />
+                <h3>You provided the following message:</h3>
+                <blockquote></blockquote>
+            </div>
         </div>
     </div>
     <div class="footer">

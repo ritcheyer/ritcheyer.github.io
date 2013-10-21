@@ -5,7 +5,7 @@ Figure A
 ------------------------------------------------------
 - 1. Focusing on an input removes the label and allows text entry.
 
-2. Validation occurs on To and Amount inputs. Entering a correct
+- 2. Validation occurs on To and Amount inputs. Entering a correct
    value shows success while entering an invalid value shows an error.
 
 - 3. Changing the amount updates the value with the correct currency formatting.
@@ -67,7 +67,6 @@ Figure C
       color: #fff;
     }
   }
-
   .overlay {
     width: 100%;
     height: 100%;
@@ -77,12 +76,12 @@ Figure C
     bottom: 0;
     left: 0;
     margin: auto;
-    
+  
     background-color: rgba(0,0,0,.5);
     z-index: 2;
-    
+  
     text-align: center;
-    
+  
     // necessary for vertical centering w/o resorting to dispay: table and such
     #spinner {
       margin: 0;
@@ -105,7 +104,7 @@ Figure C
     z-index: 1;
     color: #fff;
     text-shadow: 0 1px 0 #555;
-    
+  
   }
 
   .header {
@@ -126,6 +125,7 @@ Figure C
     bottom: 0;
     padding: 1rem 1.5rem;
     border-top: 1px solid #5A595D;
+  
 
     -webkit-box-shadow: inset 0 5px 5px #5A595D;
        -moz-box-shadow: inset 0 5px 5px #5a595d;
@@ -136,6 +136,9 @@ Figure C
       width:         calc(100% - 8.5rem);
       padding: 3% 15px;
       float: right;
+
+      text-transform: lowercase;
+
       .paypal-submit & {
         width: -webkit-calc(100% - 2rem);
         width:         calc(100% - 2rem);
@@ -164,19 +167,24 @@ Figure C
       font-size: 120%;
       height: -webkit-calc(800px - 19.3rem);
       height:         calc(800px - 19.3rem);
-      
-      
-      .payment-message {
+
+      [class*="icon-"] {
+        font-size: 1.1rem;
+        position: relative;
+        top: -1px;
+      }
+    
+      .payment-message blockquote {
         border: 0;
         position: relative;
-        width: -webkit-calc(100% - 6rem);
-        width:         calc(100% - 6rem);
+        width: -webkit-calc(100% - 1rem);
+        width:         calc(100% - 1rem);
         display: block;
-        padding: .5rem 2rem;
+        padding: .5rem 0;
         margin: 0 auto;
         resize: none;
         quotes: "\201C""\201D""\2018""\2019";
-        text-align: left;
+        text-align: center;
         z-index: 3;
 
         // maintains line breaks
@@ -186,30 +194,26 @@ Figure C
         white-space:     -pre-wrap; // Opera 4-6
         white-space:      pre-wrap; // css3
 
-        &:before,&:after {
-          position: absolute;
+        &:before,
+        &:after {
+          position: relative;
           font-size: 7rem;
           line-height: 0;
           color: rgba(255,255,255,.25);
           z-index: -1;
-          opacity: .5;
+          opacity: .7;
+          top: 3.7rem;
         }
-        &:before {
-          left: -1rem;
-          top: 3.2rem;
-          content: open-quote;
-        }
-        &:after {
-          right: -1rem;
-          bottom: 0;
-          content: close-quote;
-        }
+        &:before { content: open-quote; }
+        &:after  { content: close-quote; }
       }
     }
   }
 
   .input-contain {
-    margin-bottom: 2rem;
+    width: -webkit-calc(100% - 4rem);
+    width:         calc(100% - 4rem);
+    margin: 0 auto 2rem;
     padding: 1rem;
     position: relative;
     border: 1px solid rgba(145, 145, 145, 0.5);
@@ -231,13 +235,20 @@ Figure C
     [class*="icon-"] {
       position: absolute;
       top: 1rem;
-      right: .8rem;
-    }
+      right: -2rem;
+      &.hide {
+        display: block;
+        opacity: 0;
+      }
     
-    .icon-ok-sign,
-    .icon-warning-sign {
-      font-size: 2rem;
+
+      -webkit-transition: opacity .2s ease-in-out; // need to keep around until 7.0
+              transition: opacity .2s ease-in-out;
     }
+  
+  
+    .icon-ok,
+    .icon-warning-sign { font-size: 1.5rem; }
     .supporting-text {
       font-size: small;
       position: absolute;
@@ -253,22 +264,23 @@ Figure C
 
     #currency-type {
       position: relative;
-      top: -2px;
+      top: -1px;
+      right: 0rem;
     }
-    
+  
     [name="send-money-to"] {
       width: -webkit-calc(100% - 70px);
       width:         calc(100% - 70px);
     }
-    
+  
     [name="amount-to-send"] {
-      width: -webkit-calc(100% - 160px);
-      width:         calc(100% - 160px);
+      width: -webkit-calc(100% - 145px);
+      width:         calc(100% - 145px);
       padding-left: 0;
     }
 
     &.active {
-      
+    
       border: 1px solid #57A9D9;
       background-color: #fff;
       -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 5px rgba(58, 144, 194, 0.6), 0 2px 2px rgba(0, 0, 0, 0.2) inset;
@@ -285,14 +297,32 @@ Figure C
         -webkit-transition: all .2s ease-in-out; // need to keep around until 7.0
                 transition: all .2s ease-in-out;
       }
-      
+    
       .supporting-text {
         opacity: 1;
         -webkit-transition: opactiy .2s ease-in-out; // need to keep around until 7.0
                 transition: opactiy .2s ease-in-out;
       }
     }
+  
+    &.form-warning {
+      border: 1px solid rgb(191, 151, 83);
+      box-shadow: inset 0 0 3px rgb(191, 151, 83);
 
+      .icon-warning-sign {
+        opacity: 1;
+        -webkit-transition: opacity .2s ease-in-out; // need to keep around until 7.0
+                transition: opacity .2s ease-in-out;
+      }
+    }
+
+  }
+
+  .amount {
+    .icon-ok,
+    .icon-warning-sign {
+      right: -2rem;
+    }
   }
 
   .message {
@@ -311,33 +341,26 @@ Figure C
       vertical-align: top;
       -webkit-transition: all .2s ease-in-out; // need to keep around until 7.0
               transition: all .2s ease-in-out;
-      
+    
       &:focus + .msg-counter {
         opacity: 1;
         -webkit-transition: all .2s ease-in-out; // need to keep around until 7.0
                 transition: all .2s ease-in-out;
       }
     }
-    
+  
     + .separator {
-      border: 0;
-      border-top: 1px solid rgba(145, 145, 145, 0.5);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      height: 0;
-      margin: 2rem 2rem 0;
-      padding: 0;
+      margin-bottom: 0;
     }
   }
-  
-  .form-warning {}
-  
+
   .payment-type,
   .payment-choice {
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  
+
   .payment-type {
     border-radius: $border-radius-value;
 
@@ -345,9 +368,16 @@ Figure C
     box-shadow: inset 0 0 3px rgba(185, 185, 185, 0.75);
     background-color: rgb(245, 245, 245);
     border-radius: 10px;
+    &.form-warning {
+      border: 1px solid rgb(191, 151, 83);
+      box-shadow: inset 0 0 3px rgb(191, 151, 83);
+    }
   }
+
   .payment-recipient {
-    margin-bottom: 0;
+    width: -webkit-calc(100% - 2rem);
+    width:         calc(100% - 2rem);
+    margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
     background-color: transparent;
@@ -362,15 +392,15 @@ Figure C
     position: relative;
     background-color: transparent;
     cursor: pointer;
-    
+  
     &:hover {
       background-color: rgba(255, 255, 255, .4);
     }
 
- 
+
     -webkit-transition: all .2s; // need to keep around until 7.0
             transition: all .2s;
- 
+
     [class*="icon-"] {
       display: none;
       top: 1rem;

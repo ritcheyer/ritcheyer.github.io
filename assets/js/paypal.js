@@ -72,14 +72,20 @@ $(document).ready(function(){
     return pattern.test(emailAddress);
   }
 
-  $('textarea').autosize();
+  function decoderRing (decodeMe) {
+    var decoded = decodeURIComponent(decodeMe);
   
+    return decoded;
+  
+  }
+
   // payment recipient selection
-  $('.paypal').on('click', '.payment-choice', function(e) {
+  $('.payment-type').on('click', '.payment-choice', function(e) {
     e.stopPropagation();
     var $this = $(this);
+
+    $('.payment-type').removeClass('form-warning');
     $('.payment-choice').removeClass('selected');
-    
     $this.addClass('selected');
   });
   
@@ -129,6 +135,13 @@ $(document).ready(function(){
     e.preventDefault();
 
     var thisForm = this;
+    
+    $('.send-to input').trigger('blur');
+    $('.amount input').trigger('blur');
+
+    if($('.payment-type input[name="payment-for"]:checked').val() === undefined) {
+      $('.payment-type').addClass('form-warning');
+    }
 
     // if there aren't any form errors, we can proceed
     if($('.paypal').find('.form-warning').length == 0) {
@@ -157,75 +170,28 @@ $(document).ready(function(){
   $(':reset').on('click', function(){
     $('.payment-choice').removeClass('selected');
     $('.input-contain').removeClass('form-warning');
-    $('.icon-ok-sign, .icon-warning-sign').addClass('hide');
-  });
-
-  // validation messaging
-  $('.send-to, .amount').on('blur', 'input', function() {
-    var $this = $(this);
-    
-    // is email?
-    if($this.attr('type') === 'email') {
-      
-      // is not empty?
-      if($this.val() !== '') {
-
-        // did is pass validation?
-        if(!isValidEmailAddress($this.val())) {
-
-          // add warning class to parent container
-          $this.closest('.input-contain').addClass('form-warning');
-
-          // display the warning sign
-          $('.send-to .icon-warning-sign').fadeIn(100, function(){
-            $(this).removeClass('hide').removeAttr('style');
-          });
-          
-          // disable form submission
-          $(':submit').attr('disabled', true).val('Please correct errors first.');
-
-        } else {
-
-          // hide the warning sign since validation passed
-          $('.send-to .icon-warning-sign').addClass('hide');
-
-          // display success icon since validation passed
-          $('.send-to .icon-ok-sign').fadeIn(100, function(){
-            $(this).removeClass('hide').removeAttr('style');
-          });
-
-          // enable form submission
-          $(':submit').attr('disabled', false).val('Submit Payment');
-
-        }
-
-      }
-
-    else if($this.attr('type') === 'tel') {
-      
-    }
-
-    // not email or tel, then text or amount
-    } else {
-      // not sure if i really need to test
-      // this given the work already done?
-    }
+    $('.icon-ok, .icon-warning-sign').addClass('hide');
   });
 
   // toggling classes on input containers
   $('.send-to, .amount, .message').on('focus blur', 'input, textarea, select', function() {
-    $(this).closest('.input-contain').toggleClass('active');
+    var $this = $(this),
+    inputContain = $this.closest('.input-contain');
+
+    inputContain.toggleClass('active');
+
   });
   
 
+  // TODO: Allow for phone numbers in "To:" field
   // if user types phone number, switch input type
   // enter dash if necessary
-  $('.send-to').on('keypress', 'input', function(e) {
-    var keyCode = window.event ? e.keyCode : e.which;
-    
-    console.log(keyCode);
-
-  });
+  // $('.send-to').on('keypress', 'input', function(e) {
+  //   var keyCode = window.event ? e.keyCode : e.which;
+  //   
+  //   // console.log(keyCode);
+  // 
+  // });
   
   // only allow numbers and commas in amount field
   $('.amount').on('keypress', 'input', function(e) {
@@ -246,6 +212,7 @@ $(document).ready(function(){
   $('.amount').on('blur', 'input', function() {
     var $this = $(this),
         value = $this.val(),
+        myContainer = $this.closest('.input-contain'),
         currencyType = $this.parent('label').siblings('select').find('option:selected').data('toggle');
 
     // need to treat yen, dollars and euros differently.
@@ -266,40 +233,119 @@ $(document).ready(function(){
 
     if(value !== '') {
       value = newCurrencyValue(value, currencyType);
+      myContainer.removeClass('form-warning');
+      myContainer.find('.icon-ok').removeClass('hide');
+      myContainer.find('.icon-warning-sign').addClass('hide');
     } else {
-      $this.closest('.input-contain').addClass('form-warning');
+      myContainer.addClass('form-warning');
+      myContainer.find('.icon-ok').addClass('hide');
     }
     $this.val(value);
 
   });
 
+  // validation messaging
+  $('.send-to').on('blur', 'input', function() {
+    var $this = $(this),
+    myContainer = $this.closest('.input-contain');
+    
+    // is email?
+    if($this.attr('type') === 'email') {
+      
+      // is not empty?
+      if($this.val() !== '') {
+
+        // did is pass validation?
+        if(!isValidEmailAddress($this.val())) {
+          
+          // add warning class to parent container
+          myContainer.addClass('form-warning');
+
+          // in case it already was visible
+          myContainer.find('.icon-ok').addClass('hide');
+
+
+          // display the warning sign
+          myContainer.find('.icon-warning-sign').fadeIn(100, function(){
+            $(this).removeClass('hide').removeAttr('style');
+          });
+          
+          // disable form submission
+          $(':submit').attr('disabled', true).val('Please correct errors first.');
+          console.log('invalid email');
+
+        } else {
+          console.log('valid email');
+          myContainer.removeClass('form-warning');
+
+          // hide the warning sign since validation passed
+          myContainer.find('.icon-warning-sign').addClass('hide');
+
+          // display success icon since validation passed
+          myContainer.find('.icon-ok').fadeIn(100, function(){
+            $(this).removeClass('hide').removeAttr('style');
+          });
+
+          // enable form submission
+          $(':submit').attr('disabled', false).val('Submit Payment');
+
+        }
+
+      } else {
+        myContainer.find('.icon-ok').addClass('hide');
+        myContainer.addClass('form-warning');
+      }
+
+    } else if($this.attr('type') === 'tel') {
+      // TODO: allow phone numbers.. didn't have time to get to this one thought.. :(
+    } else {
+      // not email or tel, then text or amount
+      
+    }
+
+  });
+
   // logic for the 'thanks' page. some of this unnecessary if this were a production system.
   if($('body').hasClass('paypal-submit')) {
-    var query = window.location.search;
-    var paramArray = query.split('?');
-    var paymentValuesArray = paramArray[1].split('&');
-    var paymentValues = new Array();
+    var query = window.location.search,
+        paramArray = query.split('?'),
+        paymentValuesArray = paramArray[1].split('&'),
+        paymentValues = new Array(),
+        recipient,
+        amountSent,
+        messageSent,
+        paymentType,
+        currencyType,
+        currencyText;
     
     for(var i = 0; i < paymentValuesArray.length; i++) {
       paymentValues.push(paymentValuesArray[i].split('=')[1]);
     }
+    
+    recipient    = decoderRing(paymentValues[0]);
+    amountSent   = decoderRing(paymentValues[1]);
+    messageSent  = decoderRing(paymentValues[2]);
+    paymentType  = decoderRing(paymentValues[3]);
+    currencyType = decoderRing(paymentValues[4]);
 
-    $('.send-money-to').text(decodeURIComponent(paymentValues[0]));
-    
-    var amountSent = decodeURIComponent(paymentValues[1]);
-    amountSent = newCurrencyValue(amountSent, paymentValues[4]);
-    
-    var currencyText;
+    if(currencyType === 'dollar')    { currencyText = 'USD'; }
+    else if(currencyType === 'euro') { currencyText = 'Euro'; }
+    else if(currencyType === 'yen')  { currencyText = 'Yen'; }
 
-    if(paymentValues[4] === 'dollar')    { currencyText = 'USD'; }
-    else if(paymentValues[4] === 'euro') { currencyText = 'Euro'; }
-    else if(paymentValues[4] === 'yen')  { currencyText = 'Yen'; }
+    amountSent = newCurrencyValue(amountSent, currencyType);
+    paymentMessage = messageSent.replace(/\+/g, ' ');
 
-    $('.amount-to-send').html('<i class="icon-' + paymentValues[4] + '"> ' + amountSent + ' ' + currencyText);
+    $('.send-money-to').text(recipient);
+    $('.amount-to-send').html('<i class="icon-' + currencyType + '" />' + amountSent + ' ' + currencyText);
     
-    paymentMessage = decodeURIComponent(paymentValues[2]).replace(/\+/g, ' ');
+    // if there isn't a payment message, no need to display that section, so just remove it from the code before showing it.
+    if(paymentMessage !== '') {
+      $('.payment-message blockquote').text(paymentMessage);
+    } else {
+      $('.payment-message').remove();
+    }
     
-    $('.payment-message').text(paymentMessage);
+    // avoid flash of no content (FONC);
     setTimeout(function() {
       
       $('.confirmation-text').fadeIn('fast', function(){
@@ -308,6 +354,9 @@ $(document).ready(function(){
     }, 100);
 
   } else {
+
+    $('textarea').autosize();
+
     // spinner graphic
     var opts, target, spinner;
     opts = {
