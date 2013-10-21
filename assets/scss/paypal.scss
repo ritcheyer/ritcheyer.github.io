@@ -84,23 +84,15 @@ Figure C
     text-align: center;
     
     // necessary for vertical centering w/o resorting to dispay: table and such
-    .icon-contain {
-      bottom: 0;
-      height: 61px;
-      left: 0;
-      margin: auto;
+    #spinner {
+      margin: 0;
+      padding: 0;
+      display: block;
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 60px;
+      top: 30%;
+      left: 50%;
     }
-    
-    [class*="icon-"] {
-      text-shadow: 0 0 0 transparent;
-      -webkit-transition: all .2s; // need to keep around until 7.0
-              transition: all .2s;
-    }
-    
+
   }
 
   .header,

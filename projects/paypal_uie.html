@@ -3,7 +3,7 @@ layout: default
 title: Projects | PayPal UIE Exercise
 date: October 2013
 css: paypal.css
-js: paypal-min.js jquery.autoresize-min.js decrementer-min.js
+js: paypal-min.js jquery.autoresize-min.js decrementer-min.js spin-min.js
 --- 
 
 <!--
@@ -80,11 +80,9 @@ TODO:
             <input type="reset" name="clear-form" value="Clear" id="clear-form" class="paypal-clear-form btn-secondary">
         </footer>
     </form>
-    <div class="overlay hide">
+    <div class="overlay">
         <!-- container for vertical centering without resorting to display: table; -->
-        <span class="icon-contain">
-            <i class="icon-spin icon-spinner icon-4x"></i>
-        </span>
+        <div id="spinner"></div>
     </div>
 </section>
 <header class="adelle" style="padding-top: 1rem;">
