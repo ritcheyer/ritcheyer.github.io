@@ -553,8 +553,8 @@ label {
 }
 /* line 276, ../scss/paypal.scss */
 .paypal .input-contain [name="amount-to-send"] {
-  width: -webkit-calc(100% - 145px);
-  width: calc(100% - 145px);
+  width: -webkit-calc(100% - 150px);
+  width: calc(100% - 150px);
   padding-left: 0;
 }
 /* line 282, ../scss/paypal.scss */
