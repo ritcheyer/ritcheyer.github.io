@@ -92,6 +92,8 @@ $(document).ready(function(){
     $('.payment-type').removeClass('form-warning');
     $('.payment-choice').removeClass('selected');
     $this.addClass('selected');
+    
+    $this.next('input[type="radio"]').attr('checked', true);
   });
   
   // when focusing on the amount field, we want to do some stuff
@@ -149,7 +151,7 @@ $(document).ready(function(){
     }
 
     // if there aren't any form errors, we can proceed
-    if($('.paypal').find('.form-warning').length == 0) {
+    if($('.paypal').find('.form-warning').length === 0) {
       
       // add readonly to inputs, select and textarea on form submission
       $('input, select, textarea').attr('readonly', true);
@@ -277,10 +279,8 @@ $(document).ready(function(){
           
           // disable form submission
           $(':submit').attr('disabled', true).val('Please correct errors.');
-          console.log('invalid email');
 
         } else {
-          console.log('valid email');
           myContainer.removeClass('form-warning');
 
           // hide the warning sign since validation passed
@@ -315,13 +315,14 @@ $(document).ready(function(){
     var query = window.location.search,
         paramArray = query.split('?'),
         paymentValuesArray = paramArray[1].split('&'),
-        paymentValues = new Array(),
+        paymentValues = [],
         recipient,
         amountSent,
         messageSent,
         paymentType,
         currencyType,
-        currencyText;
+        currencyText,
+        paymentMessage;
     
     for(var i = 0; i < paymentValuesArray.length; i++) {
       paymentValues.push(paymentValuesArray[i].split('=')[1]);
@@ -365,22 +366,22 @@ $(document).ready(function(){
     // spinner graphic
     var opts, target, spinner;
     opts = {
-      lines: 15, // The number of lines to draw
-      length: 0, // The length of each line
-      width: 11, // The line thickness
-      radius: 50, // The radius of the inner circle
-      corners: 1, // Corner roundness (0..1)
-      rotate: 35, // The rotation offset
-      direction: 1, // 1: clockwise, -1: counterclockwise
-      color: '#fff', // #rgb or #rrggbb or array of colors
-      speed: 1.3, // Rounds per second
-      trail: 64, // Afterglow percentage
-      shadow: false, // Whether to render a shadow
-      hwaccel: true, // Whether to use hardware acceleration
+      lines: 15,            // The number of lines to draw
+      length: 0,            // The length of each line
+      width: 11,            // The line thickness
+      radius: 50,           // The radius of the inner circle
+      corners: 1,           // Corner roundness (0..1)
+      rotate: 35,           // The rotation offset
+      direction: 1,         // 1: clockwise, -1: counterclockwise
+      color: '#fff',        // #rgb or #rrggbb or array of colors
+      speed: 1.3,           // Rounds per second
+      trail: 64,            // Afterglow percentage
+      shadow: false,        // Whether to render a shadow
+      hwaccel: true,        // Whether to use hardware acceleration
       className: 'spinner', // The CSS class to assign to the spinner
-      zIndex: 2e9, // The z-index (defaults to 2000000000)
-      top: 'auto', // Top position relative to parent in px
-      left: 'auto' // Left position relative to parent in px
+      zIndex: 2e9,          // The z-index (defaults to 2000000000)
+      top: 'auto',          // Top position relative to parent in px
+      left: 'auto'          // Left position relative to parent in px
     };
     target = document.getElementById('spinner');
     spinner = new Spinner(opts).spin(target);
