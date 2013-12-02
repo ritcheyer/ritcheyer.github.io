@@ -30,15 +30,14 @@ I am constantly learning new things, tackling bigger challenges, and reading up 
 - 8+ years of working on end-to-end web-based solutions from client meetings to mockups to building websites and working with engineers to deliver the final product to production servers
 - 8+ years writing efficient and scalable, standards-based HTML and CSS, leveraging modern development patterns
 - 8+ years writing comprehensive websites using PHP from custom-built prototype frameworks to full-featured Wordpress templates
-- 5+ years experience with MVC Frameworks such as Rails and CakePHP
 - 4+ years developing javascript-based interactions
+- 3+ years experience with MVC Frameworks such as Rails and CakePHP
 - 3+ years studying and implementing user experience design and development techniques to create visually appropriate interfaces for all types of web-enabled devices (making the page responsive)
 - Competent in design tools like Adobe Photoshop to create basic mockups and understand what a designer is trying to convey
 - Proficient in prototyping user experiences using a variety of mockup tools.[^2]
 - Experience creating user experiences that are targeted at enterprise customers
 - Proficient using Git and Subversion
 - Working closely with designers, engineers, and engineers to produce killer user experiences
-- Regular contributor to open-source projects
 - Experience managing projects across a geographically distributed workforce
 
 
