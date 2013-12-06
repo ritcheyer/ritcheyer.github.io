@@ -1,4 +1,4 @@
 my-website
 ==========
 
-jekyll-based website for to be named domain
+jekyll-based website driving http://eric.ritchey.io
