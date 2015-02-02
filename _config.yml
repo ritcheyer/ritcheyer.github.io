@@ -1,9 +1,9 @@
 name: Hello.
-pygments: true
+# pygments: true
 url: http://eric.ritchey.io
-timezone: America/Los Angeles
-permalink: pretty
-# markdown: redcarpet
+# timezone: America/Los Angeles
+# permalink: pretty
+markdown: redcarpet
 # redcarpet:
 #   extensions: [footnotes]
 

@@ -1,0 +1,80 @@
+.pane-skinny-footer {
+  clear: both;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+.container { overflow: hidden; }
+.main-column,
+.secondary-column {
+  display: block;
+  padding: 1rem;
+  background-color: white;
+  padding-bottom: 10000px;
+  margin-bottom: -9990px;
+  overflow: hidden;
+}
+.main-column {
+  width: 60%;
+  float: left;
+}
+.secondary-column {
+  width: 40%;
+  float: right;
+}
+.secondary-column .inside {
+  margin-top: 5.4rem;
+}
+.main-content {
+  margin-bottom: 5rem;
+  overflow: hidden;
+}
+
+@media (max-width: 40em) {
+  html { background-color: white; }
+  [id="logo-link"] .logo {
+    height: 14px;
+    top: -1px;
+  }
+  #hamburger,
+  .mobile_wrapper { display: none; }
+
+  .main-column,
+  .secondary-column {
+    display: block;
+    width: 100%;
+    float: none;
+    padding: 1rem 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    clear: both;
+  }
+  .secondary-column {
+    border-top: 1px dotted #ccc;
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+  .secondary-column .inside { margin-top: 0; }
+  .section-title { margin-top: 29px; }
+
+  .pane-skinny-footer { background-color: white; box-shadow: 0 0 0 transparent; }
+  footer .footer-copy a { color: #333; }
+}
+
+/* -- unhappy !important rules because of inline styling -- */
+.quick-links { margin-left: 0 !important; }
+
+
+/* -- styling for blog stuffs -- */
+.blog-text,
+.forum-teaser {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.blog-text h2,
+.forum-teaser a {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  font-family: Helvetica;
+}
